@@ -11,3 +11,4 @@ CircleBinder
 - [Comiket](https://github.com/CircleBinder/CircleBinder-Comiket)
 - Creation
 - みみけっと
+- 博麗神社例大祭
