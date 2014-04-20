@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         />
 
-    <net.ichigotake.circlebinder.common.view.CircleCutView
+    <circlebinder.common.view.CircleCutView
         android:id="@+id/circle_detail_circle_cut"
         android:layout_toRightOf="@+id/circle_detail_checklist_color"
         android:layout_width="wrap_content"

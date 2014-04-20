@@ -32,7 +32,7 @@
         android:background="#ffffff"
         >
 
-        <net.ichigotake.circlebinder.common.view.CircleCutView
+        <circlebinder.common.view.CircleCutView
             style="@style/CircleBinderCircleCutView"
             android:id="@+id/checklist_item_circle_cut"
             android:layout_alignParentTop="true"
