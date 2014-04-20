@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 public class ArrayAdapter<I, T> extends android.widget.ArrayAdapter<I> {
 
     private final ViewBinder<I, T> binder;
-    private final LayoutInflater inflater;
+    protected final LayoutInflater inflater;
 
     public ArrayAdapter(Context context, ViewBinder<I, T> binder) {
         super(context, 0);
