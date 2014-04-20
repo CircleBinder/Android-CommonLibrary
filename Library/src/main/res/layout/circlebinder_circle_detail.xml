@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/circle_detail_checklist_color"
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        />
+
+    <net.ichigotake.circlebinder.common.view.CircleCutView
+        android:id="@+id/circle_detail_circle_cut"
+        android:layout_toRightOf="@+id/circle_detail_checklist_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="8dp"
+        />
+
+    <LinearLayout
+        android:layout_toRightOf="@+id/circle_detail_circle_cut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        >
+
+        <TextView
+            android:id="@+id/circle_detail_space"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1日目 シ-01a"
+            android:lineSpacingExtra="12dp"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+
+        <TextView
+            android:id="@+id/circle_detail_circle_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="サークル名"
+            android:lineSpacingExtra="12dp"
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+
+        <TextView
+            android:id="@+id/circle_detail_pen_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ペンネーム"
+            android:lineSpacingExtra="12dp"
+            android:textSize="16sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            />
+
+        </LinearLayout>
+
+</RelativeLayout>

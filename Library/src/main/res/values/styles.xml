@@ -1,0 +1,42 @@
+<resources>
+
+    <color name="circlebinder_app_head_background">#000000</color>
+    <color name="circlebinder_app_head_text">#ffffff</color>
+    <dimen name="circlebinder_app_head_section_text_size">18sp</dimen>
+    <dimen name="circlebinder_app_head_section_padding">4dp</dimen>
+
+    <style name="CircleBinderSectionHeadTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/circlebinder_app_head_text</item>
+        <item name="android:textSize">@dimen/circlebinder_app_head_section_text_size</item>
+        <item name="android:padding">@dimen/circlebinder_app_head_section_padding</item>
+    </style>
+
+    <style name="CircleBinderContentBorder">
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#888888</item>
+    </style>
+
+    <style name="CircleBinderHomeFavoriteMore">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center|right</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="CircleBinderCircleCutView">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+
+    <style name="CircleBinderCircleListItemCircleName">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+</resources>

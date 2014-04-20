@@ -1,0 +1,23 @@
+apply plugin: 'android-library'
+apply from: '../gradle/common.gradle'
+
+def theVersionCode = 1
+def theVersionName = "0.1"
+
+android {
+    compileSdkVersion androidSdkVersion
+    buildToolsVersion androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion androidSdkVersion
+        versionCode theVersionCode
+        versionName theVersionName
+    }
+}
+
+dependencies {
+    provided 'com.android.support:appcompat-v7:19.1.0'
+    provided 'com.fourmob.colorpicker:colorpicker:1.0.0-3'
+    provided 'com.squareup:otto:1.3.4'
+}

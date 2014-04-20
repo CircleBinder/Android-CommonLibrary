@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CircleBinderApp</string>
+    <string name="circlebinder_title_activity_home">HomeActivity</string>
+    <string name="circlebinder_action_search">Search</string>
+
+    <string name="circlebinder_pref_app_storage">pref_app_storage</string>
+    <string name="circlebinder_pref_app_storage_is_initialize">pref_app_storage_is_initialize</string>
+
+    <!-- 共通用語 -->
+    <string name="circlebinder_app_activity">アクティビティ</string>
+    <string name="circlebinder_app_favorite_more">お気に入りサークル更新情報 -&gt;</string>
+    <string name="circlebinder_app_checklist">チェックリスト</string>
+
+    <!-- サークル検索 -->
+    <string name="circlebinder_app_circle_search_hint">出展サークルを検索</string>
+    <string name="circlebinder_app_circle_search_option_accessibility">詳細な検索オプション</string>
+
+</resources>

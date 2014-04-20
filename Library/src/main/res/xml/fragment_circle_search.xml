@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="検索条件"
+        android:key="pref_key_circle_search_option"
+        >
+
+        <ListPreference
+            android:title="ジャンル"
+            android:key="pref_key_filter_genre"
+            android:entries="@array/filter_genre_value"
+            android:entryValues="@array/filter_genre_key"
+            />
+
+        <ListPreference
+            android:title="表示順"
+            android:key="pref_key_filter_order"
+            android:entries="@array/circle_order_value"
+            android:entryValues="@array/circle_order_key"
+            />
+
+        <CheckBoxPreference
+            android:title="落選サークル"
+            android:key="pref_key_filter_rejected"
+            android:defaultValue="false"
+            />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
