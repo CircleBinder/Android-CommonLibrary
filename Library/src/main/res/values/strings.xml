@@ -13,6 +13,9 @@
     <string name="circlebinder_app_favorite_more">お気に入りサークル更新情報 -&gt;</string>
     <string name="circlebinder_app_checklist">チェックリスト</string>
 
+    <!-- トップページ -->
+    <string name="circlebinder_home_change_log">更新履歴</string>
+
     <!-- サークル検索 -->
     <string name="circlebinder_app_circle_search_hint">出展サークルを検索</string>
     <string name="circlebinder_app_circle_search_option_accessibility">詳細な検索オプション</string>
