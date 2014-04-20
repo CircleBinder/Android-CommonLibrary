@@ -4,6 +4,9 @@
     <color name="circlebinder_app_head_text">#ffffff</color>
     <dimen name="circlebinder_app_head_section_text_size">18sp</dimen>
     <dimen name="circlebinder_app_head_section_padding">4dp</dimen>
+    <dimen name="circlebinder_app_spacer_small">8dp</dimen>
+    <dimen name="circlebinder_app_spacer_middle">16dp</dimen>
+    <dimen name="circlebinder_app_spacer_large">24dp</dimen>
 
     <style name="CircleBinderSectionHeadTitle">
         <item name="android:layout_width">match_parent</item>
@@ -37,6 +40,18 @@
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CircleBinderSpacerHorizontalSmall">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">@dimen/circlebinder_app_spacer_small</item>
+    </style>
+
+    <style name="CircleBinderSpacerVerticalLarge">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/circlebinder_app_spacer_large</item>
     </style>
 
 </resources>
