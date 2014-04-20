@@ -18,9 +18,10 @@ public class CircleSpaceFactory implements Legacy {
                 .setName(name.substring(0, 1))
                 .setArea(new AreaBuilder().setName(name.substring(0, 1)).build())
                 .build();
+
         return new CircleSpaceBuilder()
                 .setBlock(block)
-                .setNo(Integer.parseInt(name.substring(1, 2)))
+                .setNo(Integer.parseInt(name.substring(1, 3)))
                 .setNoSub(name.substring(3))
                 .build();
     }
