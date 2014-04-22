@@ -4,10 +4,31 @@ import android.os.Parcel;
 
 public final class Checklist implements android.os.Parcelable {
 
+    public static class Builder {
+
+        ChecklistColor color;
+        String name;
+
+        public Checklist build() {
+            return new Checklist(this);
+        }
+
+        public Builder setColor(ChecklistColor color) {
+            this.color = color;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+    }
+
     private final ChecklistColor color;
     private final String name;
 
-    Checklist(ChecklistBuilder builder) {
+    private Checklist(Builder builder) {
         color = builder.color;
         name = builder.name;
     }

@@ -2,15 +2,22 @@ package circlebinder.common.event;
 
 public final class SpaceFactory {
 
+    /**
+     * "あ01a" のような文字列から {@link Space} を生成する
+     * @param name
+     * @return space
+     */
     public Space from(String name) {
-        Block block = new BlockBuilder()
-                .setName(name.substring(0, 1))
-                .setArea(new AreaBuilder().setName(name.substring(0, 1)).build())
-                .build();
-        return new CircleSpaceBuilder()
-                .setBlock(block)
-                .setNo(Integer.parseInt(name.substring(1, 2)))
-                .setNoSub(name.substring(3))
+        String blockName = name.substring(0, 1);
+        int spaceNo = Integer.parseInt(name.substring(1, 3));
+        String spaceNuSub = name.substring(3);
+
+        return new Space.Builder()
+                .setBlockName(blockName)
+                .setNo(spaceNo)
+                .setNoSub(spaceNuSub)
+                .setName(String.format("%s-%02d%s", blockName, spaceNo, spaceNuSub))
+                .setSimpleName(String.format("%s%02d%s", blockName, spaceNo, spaceNuSub))
                 .build();
     }
 

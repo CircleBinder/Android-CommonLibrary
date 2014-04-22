@@ -1,9 +1,10 @@
 package circlebinder.common.search;
 
-import circlebinder.common.circle.CircleViewHolder;
-import circlebinder.common.event.Circle;
 import net.ichigotake.common.widget.CursorAdapter;
 import net.ichigotake.common.widget.CursorAdapterParameter;
+
+import circlebinder.common.circle.CircleViewHolder;
+import circlebinder.common.event.Circle;
 
 /**
  * TODO: SectionIndexerの実装
