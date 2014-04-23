@@ -74,6 +74,18 @@
 
         </LinearLayout>
 
+        <!-- TODO: アイコンの色を変えて背景色の指定を無くす -->
+        <!-- TODO: 複数の外部リンクを表示出来るようにする -->
+        <ImageView
+            android:id="@+id/circlebinder_checklist_item_links"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_action_attach"
+            android:background="#dddddd"
+            />
+
     </RelativeLayout>
 
 </RelativeLayout>

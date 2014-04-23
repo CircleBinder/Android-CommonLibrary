@@ -35,6 +35,15 @@ public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHold
         tag.getCircleName().setText(item.getName());
         tag.getPenName().setText(item.getPenName());
         tag.getCircleCut().setOnClickListener(new OnCircleCutClickListener(listener, item));
+        //TODO: 外部リンクを複数設置出来るようにする。今は1つで決め打ち
+        if (item.getLinks().isEmpty()) {
+            tag.getLinks().setVisibility(View.GONE);
+        } else {
+            tag.getLinks().setOnClickListener(new OnCircleLinksClickListener(
+                    listener, item.getLinks().get(0), item
+            ));
+            tag.getLinks().setVisibility(View.VISIBLE);
+        }
 
         tag.getCircleCut().setVisibility(View.GONE);
         tag.getSpace().setText(

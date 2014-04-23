@@ -3,6 +3,9 @@ package circlebinder.common.event;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 import circlebinder.common.checklist.ChecklistColor;
 
 public final class Circle implements Parcelable {
@@ -15,8 +18,11 @@ public final class Circle implements Parcelable {
         private ChecklistColor checklistColor;
         private String name;
         private String penName;
+        private List<CircleLink> links;
 
-        public Builder() {}
+        public Builder() {
+            links = new CopyOnWriteArrayList<CircleLink>();
+        }
 
         public Builder(Builder builder) {
             id = builder.id;
@@ -25,10 +31,22 @@ public final class Circle implements Parcelable {
             checklistColor = builder.checklistColor;
             name = builder.name;
             penName = builder.penName;
+            links = builder.links;
         }
 
         public Circle build() {
             return new Circle(this);
+        }
+
+        public Builder addLink(CircleLink link) {
+            this.links.add(link);
+            return this;
+        }
+
+        public Builder setLink(CircleLink link) {
+            this.links.clear();
+            this.links.add(link);
+            return this;
         }
 
         public Builder setPenName(String penName) {
@@ -61,6 +79,15 @@ public final class Circle implements Parcelable {
             return this;
         }
 
+        public void clear() {
+            id = 0;
+            space = null;
+            genre = null;
+            checklistColor = null;
+            name = null;
+            penName = null;
+            links.clear();
+        }
     }
 
     private final int id;
@@ -69,6 +96,7 @@ public final class Circle implements Parcelable {
     private final ChecklistColor checklistColor;
     private final String name;
     private final String penName;
+    private final CircleLinks links;
 
     private Circle(Builder builder) {
         id = builder.id;
@@ -77,6 +105,7 @@ public final class Circle implements Parcelable {
         checklistColor = builder.checklistColor;
         name = builder.name;
         penName = builder.penName;
+        links = new CircleLinks(builder.links);
     }
 
     public int getId() {
@@ -103,6 +132,10 @@ public final class Circle implements Parcelable {
         return penName;
     }
 
+    public CircleLinks getLinks() {
+        return links;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -116,6 +149,7 @@ public final class Circle implements Parcelable {
         dest.writeInt(this.checklistColor == null ? -1 : this.checklistColor.ordinal());
         dest.writeString(this.name);
         dest.writeString(this.penName);
+        dest.writeParcelable(this.links, flags);
     }
 
     private Circle(Parcel in) {
@@ -126,6 +160,7 @@ public final class Circle implements Parcelable {
         this.checklistColor = tmpChecklistColor == -1 ? null : ChecklistColor.values()[tmpChecklistColor];
         this.name = in.readString();
         this.penName = in.readString();
+        this.links = in.readParcelable(CircleLinks.class.getClassLoader());
     }
 
     public static Parcelable.Creator<Circle> CREATOR = new Parcelable.Creator<Circle>() {

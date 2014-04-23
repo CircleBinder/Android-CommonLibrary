@@ -76,6 +76,14 @@ public final class Space implements Parcelable {
                 return new Builder[size];
             }
         };
+
+        public void clear() {
+            this.name = null;
+            this.simpleName = null;
+            this.blockName = null;
+            this.spaceNo = 0;
+            this.spaceNoSub = null;
+        }
     }
 
     private final String name;
