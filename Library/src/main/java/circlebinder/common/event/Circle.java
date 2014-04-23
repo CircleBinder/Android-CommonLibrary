@@ -157,7 +157,7 @@ public final class Circle implements Parcelable {
         this.space = in.readParcelable(Space.class.getClassLoader());
         this.genre = in.readParcelable(Genre.class.getClassLoader());
         int tmpChecklistColor = in.readInt();
-        this.checklistColor = tmpChecklistColor == -1 ? null : ChecklistColor.values()[tmpChecklistColor];
+        this.checklistColor = tmpChecklistColor == -1 ? ChecklistColor.NONE : ChecklistColor.values()[tmpChecklistColor];
         this.name = in.readString();
         this.penName = in.readString();
         this.links = in.readParcelable(CircleLinks.class.getClassLoader());
