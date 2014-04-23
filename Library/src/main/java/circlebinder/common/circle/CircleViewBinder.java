@@ -50,7 +50,7 @@ public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHold
                 String.format("%s\n%02d%s",
                         item.getSpace().getBlockName(), item.getSpace().getNo(), item.getSpace().getNoSub())
         );
-        tag.getGenre().setText("");
+        tag.getGenre().setText(item.getGenre().getName());
     }
 
     private static class OnCircleClickListener implements View.OnClickListener {
