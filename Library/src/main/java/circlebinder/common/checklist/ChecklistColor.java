@@ -5,15 +5,15 @@ import android.graphics.Color;
 import circlebinder.Legacy;
 
 public enum ChecklistColor implements Legacy {
-    ORANGE(0, "チェックリスト", "#FF944A"),
-    PINK(1, "チェックリスト", "#FF00FF"),
-    YELLOW(2, "チェックリスト", "#FFF700"),
-    GREEN(3, "チェックリスト", "#00B54A"),
-    LIGHT_BLUE(4, "チェックリスト", "#00B5FF"),
-    PURPLE(5, "チェックリスト", "#9C529C"),
-    BLUE(6, "チェックリスト", "#0000FF"),
-    LIGHT_GREEN(7, "チェックリスト", "#00FF00"),
-    RED(8, "チェックリスト", "#FF0000"),
+    ORANGE(0, "お気に入り", "#FF944A"),
+    PINK(1, "お気に入り", "#FF00FF"),
+    YELLOW(2, "お気に入り", "#FFF700"),
+    GREEN(3, "お気に入り", "#00B54A"),
+    LIGHT_BLUE(4, "お気に入り", "#00B5FF"),
+    PURPLE(5, "お気に入り", "#9C529C"),
+    BLUE(6, "お気に入り", "#0000FF"),
+    LIGHT_GREEN(7, "お気に入り", "#00FF00"),
+    RED(8, "お気に入り", "#FF0000"),
     NONE(9, "お気に入りからはずす", "#dddddd"),
     ALL(10, "全て", "#ffffffff"),
     ;

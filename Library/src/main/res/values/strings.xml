@@ -11,7 +11,7 @@
     <!-- 共通用語 -->
     <string name="circlebinder_app_activity">アクティビティ</string>
     <string name="circlebinder_app_favorite_more">お気に入りサークル更新情報 -&gt;</string>
-    <string name="circlebinder_app_checklist">チェックリスト</string>
+    <string name="circlebinder_app_favorite">お気に入り</string>
 
     <!-- トップページ -->
     <string name="circlebinder_home_change_log">更新履歴</string>
