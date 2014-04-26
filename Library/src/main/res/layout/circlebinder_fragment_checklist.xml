@@ -6,13 +6,32 @@
     android:layout_height="match_parent"
     >
 
-    <Spinner
-        android:id="@+id/fragment_checklist_selector"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Spinner
+            android:id="@+id/fragment_checklist_selector"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            />
+
+        <CheckBox
+            android:id="@+id/fragment_checklist_filter"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/circlebinder_app_spacer_small"
+            android:layout_centerVertical="true"
+            android:text="@string/circlebinder_app_circle_search_filter_by_checked"
+            />
+
+    </RelativeLayout>
 
     <View style="@style/CircleBinderContentBorder" />
 
@@ -29,8 +48,8 @@
 
     <include
         layout="@layout/circlebinder_fragment_checklist_empty"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
         />
 
 </LinearLayout>
