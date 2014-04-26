@@ -46,6 +46,10 @@ public final class DashboardItemBinder
     @Override
     public void bindView(int position, DashboardItem item, DashboardItemViewHolder tag) {
         tag.getLabel().setText(item.getLabel());
-        tag.getLabel().setOnClickListener(new OnClickToTrip(item.getTripper()));
+        if (item.getTripper() == null) {
+            tag.getLabel().setOnClickListener(null);
+        } else {
+            tag.getLabel().setOnClickListener(new OnClickToTrip(item.getTripper()));
+        }
     }
 }
