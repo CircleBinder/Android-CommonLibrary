@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 
+import java.io.Serializable;
+
 public final class RestoreBundle {
 
     private final Bundle arguments;
@@ -38,4 +40,17 @@ public final class RestoreBundle {
         }
         return restoreObject;
     }
+
+    public <T extends Serializable> T getSerializable(String key) {
+        T restoreObject;
+        if (savedInstanceState.containsKey(key)) {
+            restoreObject = (T)savedInstanceState.getSerializable(key);
+        } else if (arguments.containsKey(key)) {
+            restoreObject = (T)arguments.getSerializable(key);
+        } else {
+            restoreObject = null;
+        }
+        return restoreObject;
+    }
+
 }

@@ -3,13 +3,13 @@ package circlebinder.common.event;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import circlebinder.common.checklist.Checklist;
+import circlebinder.common.checklist.ChecklistColor;
 
 public final class Favorite implements Parcelable {
 
     public static class Builder {
 
-        private Checklist checklist;
+        private ChecklistColor checklistColor;
         private Circle circle;
 
         public Favorite build() {
@@ -21,23 +21,23 @@ public final class Favorite implements Parcelable {
             return this;
         }
 
-        public Builder setChecklist(Checklist checklist) {
-            this.checklist = checklist;
+        public Builder setChecklistColor(ChecklistColor color) {
+            this.checklistColor = color;
             return this;
         }
 
     }
 
-    private final Checklist checklist;
+    private final ChecklistColor checklistColor;
     private final Circle circle;
 
     private Favorite(Builder builder) {
-        checklist = builder.checklist;
+        checklistColor = builder.checklistColor;
         circle = builder.circle;
     }
 
-    public Checklist getChecklist() {
-        return checklist;
+    public ChecklistColor getChecklist() {
+        return checklistColor;
     }
 
     public Circle getCircle() {
@@ -51,16 +51,17 @@ public final class Favorite implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(this.checklist, 0);
+        dest.writeInt(this.checklistColor == null ? -1 : this.checklistColor.ordinal());
         dest.writeParcelable(this.circle, 0);
     }
 
     private Favorite(Parcel in) {
-        this.checklist = in.readParcelable(Checklist.class.getClassLoader());
+        int tmpChecklistColor = in.readInt();
+        this.checklistColor = tmpChecklistColor == -1 ? null : ChecklistColor.values()[tmpChecklistColor];
         this.circle = in.readParcelable(Circle.class.getClassLoader());
     }
 
-    public static Parcelable.Creator<Favorite> CREATOR = new Parcelable.Creator<Favorite>() {
+    public static Creator<Favorite> CREATOR = new Creator<Favorite>() {
         public Favorite createFromParcel(Parcel source) {
             return new Favorite(source);
         }
