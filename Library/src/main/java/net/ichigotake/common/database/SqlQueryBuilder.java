@@ -24,10 +24,14 @@ public final class SqlQueryBuilder {
             values = new CopyOnWriteArrayList<String>();
         }
 
-        public Where and(String key, Object value) {
-            conditions.add(String.format("%s = ?", key));
+        public Where and(String key, String expr, Object value) {
+            conditions.add(key + " " + expr + " ?");
             values.add(value.toString());
             return this;
+        }
+
+        public Where and(String key, Object value) {
+            return and(key, "=", value);
         }
 
         public Where like(String key, Object value) {
