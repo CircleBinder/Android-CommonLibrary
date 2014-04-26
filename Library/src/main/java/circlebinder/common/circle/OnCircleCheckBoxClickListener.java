@@ -18,6 +18,7 @@ final class OnCircleCheckBoxClickListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        listener.onCheckBoxClick(item, holder, !item.isChecked());
+        holder.getCheckBox().toggle();
+        listener.onCheckBoxClick(item, holder, holder.getCheckBox().isChecked());
     }
 }

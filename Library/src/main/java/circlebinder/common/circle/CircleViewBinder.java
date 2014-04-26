@@ -47,6 +47,7 @@ public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHold
         }
 
         tag.getCircleCut().setVisibility(View.GONE);
+        tag.getCheckBox().setChecked(item.isChecked());
         listener.onCheckBoxClick(item, tag, item.isChecked());
         tag.getSpace().setOnClickListener(new OnCircleCheckBoxClickListener(item, tag, listener));
         tag.getSpace().setText(
