@@ -48,6 +48,18 @@
         <item name="android:minWidth">@dimen/circlebinder_app_spacer_small</item>
     </style>
 
+    <style name="CircleBinderSpacerVerticalSmall">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/circlebinder_app_spacer_small</item>
+    </style>
+
+    <style name="CircleBinderSpacerVerticalMiddle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/circlebinder_app_spacer_middle</item>
+    </style>
+
     <style name="CircleBinderSpacerVerticalLarge">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

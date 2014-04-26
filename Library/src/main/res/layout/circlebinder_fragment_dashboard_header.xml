@@ -4,7 +4,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/circlebinder_app_spacer_middle"
+    android:paddingTop="@dimen/circlebinder_app_spacer_small"
+    android:paddingRight="@dimen/circlebinder_app_spacer_middle"
+    android:paddingBottom="@dimen/circlebinder_app_spacer_small"
+    android:paddingLeft="@dimen/circlebinder_app_spacer_middle"
     >
 
     <LinearLayout
@@ -34,7 +37,7 @@
         android:layout_height="wrap_content"
         />
 
-    <View style="@style/CircleBinderSpacerVerticalLarge"/>
+    <View style="@style/CircleBinderSpacerVerticalSmall"/>
 
     <TextView
         android:id="@+id/circlebinder_fragment_dashboard_header_event_location_name"
@@ -47,7 +50,5 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         />
-
-    <View style="@style/CircleBinderSpacerVerticalLarge"/>
 
 </LinearLayout>
