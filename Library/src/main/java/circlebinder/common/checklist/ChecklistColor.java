@@ -5,28 +5,26 @@ import android.graphics.Color;
 import circlebinder.Legacy;
 
 public enum ChecklistColor implements Legacy {
-    ORANGE(0, "お気に入り", "#FF944A"),
-    PINK(1, "お気に入り", "#FF00FF"),
-    YELLOW(2, "お気に入り", "#FFF700"),
-    GREEN(3, "お気に入り", "#00B54A"),
-    LIGHT_BLUE(4, "お気に入り", "#00B5FF"),
-    PURPLE(5, "お気に入り", "#9C529C"),
-    BLUE(6, "お気に入り", "#0000FF"),
-    LIGHT_GREEN(7, "お気に入り", "#00FF00"),
-    RED(8, "お気に入り", "#FF0000"),
-    NONE(9, "お気に入りからはずす", "#dddddd"),
-    ALL(10, "全て", "#ffffffff"),
+    ALL(-1, "全て", "#ffffffff"),
+    NONE(0, "お気に入りからはずす", "#dddddd"),
+    ORANGE(1, "お気に入り", "#FF944A"),
+    PINK(2, "お気に入り", "#FF00FF"),
+    YELLOW(3, "お気に入り", "#FFF700"),
+    GREEN(4, "お気に入り", "#00B54A"),
+    LIGHT_BLUE(5, "お気に入り", "#00B5FF"),
+    PURPLE(6, "お気に入り", "#9C529C"),
+    BLUE(7, "お気に入り", "#0000FF"),
+    LIGHT_GREEN(8, "お気に入り", "#00FF00"),
+    RED(9, "お気に入り", "#FF0000"),
     ;
 
     final private int mId;
     final private String mName;
-    final private String mColorCode;
     final private int mColor;
 
     private ChecklistColor(int id, String name, String colorCode) {
         mId = id;
         mName = name;
-        mColorCode = colorCode;
         mColor = Color.parseColor(colorCode);
     }
 
@@ -55,10 +53,11 @@ public enum ChecklistColor implements Legacy {
         ChecklistColor[] values = values();
         int[] colors = new int[values.length-1];
         for (ChecklistColor color : values) {
-            if (ALL != color) {
-                colors[color.getId()] = color.getColor();
+            if (color.getId() > 0) {
+                colors[color.getId()-1] = color.getColor();
             }
         }
+        colors[colors.length-1] = NONE.getColor();
         return colors;
     }
 
@@ -76,14 +75,14 @@ public enum ChecklistColor implements Legacy {
         ChecklistColor[] values = values();
         ChecklistColor[] colors = new ChecklistColor[values.length-2];
         for (ChecklistColor color : values) {
-            if (NONE != color && ALL != color) {
-                colors[color.getId()] = color;
+            if (color.getId() > 0) {
+                colors[color.getId()-1] = color;
             }
         }
         return colors;
     }
 
-    public static boolean is(CharSequence constraint) {
-        return constraint.toString().equals("" + ALL.getId());
+    public static boolean isChecklist(ChecklistColor checklist) {
+        return checklist.getId() > 0;
     }
 }
