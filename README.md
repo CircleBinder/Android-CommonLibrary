@@ -17,8 +17,8 @@ CircleBinder
 対応予定イベント
 ------------
 
-- COMIC1 *COMIC1☆8  終了後にリリース予定*
+- [COMIC1](https://github.com/CircleBinder/CircleBinder-Comic1)
 - [Comiket](https://github.com/CircleBinder/CircleBinder-Comiket) *6月1日にプレビュー版としてリリース予定*
 - Creation *公式サイトでSC64の参加サークルが公開されたらリリース*
 - みみけっと
-- 博麗神社例大祭 *5月11日ごろにリリース予定*
+- 博麗神社例大祭 *5月4日ごろにリリース予定*
