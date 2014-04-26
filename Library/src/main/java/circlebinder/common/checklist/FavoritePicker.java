@@ -49,7 +49,7 @@ public final class FavoritePicker {
 
         @Override
         public void onColorSelected(int i) {
-            ChecklistColor color = ChecklistColor.get(i);
+            ChecklistColor color = ChecklistColor.getByColor(i);
             listener.onSelected(color);
         }
     }

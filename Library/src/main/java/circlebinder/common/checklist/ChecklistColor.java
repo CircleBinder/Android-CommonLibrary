@@ -4,6 +4,7 @@ import android.graphics.Color;
 
 import circlebinder.Legacy;
 
+//TODO: インターフェースをすっきりさせたい
 public enum ChecklistColor implements Legacy {
     ALL(-1, "全て", "#ffffffff"),
     NONE(0, "お気に入りからはずす", "#dddddd"),
@@ -61,7 +62,7 @@ public enum ChecklistColor implements Legacy {
         return colors;
     }
 
-    public static ChecklistColor get(int color) {
+    public static ChecklistColor getByColor(int color) {
         ChecklistColor value = NONE;
         for (ChecklistColor item : values()) {
             if (item.getColor() == color) {
@@ -69,6 +70,15 @@ public enum ChecklistColor implements Legacy {
             }
         }
         return value;
+    }
+
+    public static ChecklistColor getById(int id) {
+        for (ChecklistColor color : values()) {
+            if (id == color.getId()) {
+                return color;
+            }
+        }
+        return NONE;
     }
 
     public static ChecklistColor[] checklists() {
@@ -85,4 +95,5 @@ public enum ChecklistColor implements Legacy {
     public static boolean isChecklist(ChecklistColor checklist) {
         return checklist.getId() > 0;
     }
+
 }
