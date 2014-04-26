@@ -1,15 +1,15 @@
-package circlebinder.common.news;
+package circlebinder.common.dashboard;
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
-public final class ChangelogFeed implements Feed {
+public final class ChangelogFeed implements Feed, Parcelable {
 
     public static class Builder {
 
         private String title;
         private String body;
-        private FeedDate publishDate;
-
+        private PublishDate publishDate;
 
         public ChangelogFeed build() {
             return new ChangelogFeed(this);
@@ -25,7 +25,7 @@ public final class ChangelogFeed implements Feed {
             return this;
         }
 
-        public Builder setPublishDate(FeedDate publishDate) {
+        public Builder setPublishDate(PublishDate publishDate) {
             this.publishDate = publishDate;
             return this;
         }
@@ -34,7 +34,7 @@ public final class ChangelogFeed implements Feed {
 
     private final String title;
     private final String body;
-    private final FeedDate publishDate;
+    private final PublishDate publishDate;
 
     public ChangelogFeed(Builder builder) {
         this.title = builder.title;
@@ -53,7 +53,7 @@ public final class ChangelogFeed implements Feed {
     }
 
     @Override
-    public FeedDate getPublishDate() {
+    public PublishDate getPublishDate() {
         return publishDate;
     }
 
@@ -72,7 +72,7 @@ public final class ChangelogFeed implements Feed {
     private ChangelogFeed(Parcel in) {
         this.title = in.readString();
         this.body = in.readString();
-        this.publishDate = in.readParcelable(FeedDate.class.getClassLoader());
+        this.publishDate = in.readParcelable(PublishDate.class.getClassLoader());
     }
 
     public static Creator<ChangelogFeed> CREATOR = new Creator<ChangelogFeed>() {

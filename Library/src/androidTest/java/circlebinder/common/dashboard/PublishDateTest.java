@@ -1,19 +1,19 @@
-package circlebinder.common.news;
+package circlebinder.common.dashboard;
 
 import android.test.AndroidTestCase;
 
 import circlebinder.common.test.ParcelUtil;
 
-public final class ChangelogFeedDateTest extends AndroidTestCase {
+public final class PublishDateTest extends AndroidTestCase {
 
     public void testParselable() {
-        ChangelogFeedDate expect = new ChangelogFeedDate.Builder()
+        PublishDate expect = new PublishDate.Builder()
                 .setFormattedDate("2013-04-05")
                 .setTimestamp(100)
                 .build();
 
         try {
-            ChangelogFeedDate got = ParcelUtil.restore(expect);
+            PublishDate got = ParcelUtil.restore(expect);
             assertEquals(expect.getFormattedDate(), got.getFormattedDate());
             assertEquals(expect.getTimestamp(), got.getTimestamp());
         } catch (Exception e) {
