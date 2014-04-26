@@ -53,4 +53,15 @@ public final class RestoreBundle {
         return restoreObject;
     }
 
+    public int getInt(String key) {
+        int restoreObject;
+        if (savedInstanceState.containsKey(key)) {
+            restoreObject = savedInstanceState.getInt(key);
+        } else if (arguments.containsKey(key)) {
+            restoreObject = arguments.getInt(key);
+        } else {
+            restoreObject = 0;
+        }
+        return restoreObject;
+    }
 }
