@@ -4,9 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import net.ichigotake.common.widget.ViewBinder;
+
 import circlebinder.common.R;
 import circlebinder.common.event.Circle;
-import net.ichigotake.common.widget.ViewBinder;
 
 public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHolder> {
 
@@ -46,6 +47,8 @@ public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHold
         }
 
         tag.getCircleCut().setVisibility(View.GONE);
+        listener.onCheckBoxClick(item, tag, item.isChecked());
+        tag.getSpace().setOnClickListener(new OnCircleCheckBoxClickListener(item, tag, listener));
         tag.getSpace().setText(
                 String.format("%s\n%02d%s",
                         item.getSpace().getBlockName(), item.getSpace().getNo(), item.getSpace().getNoSub())

@@ -17,11 +17,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="72dp"
-        android:gravity="center|center"
+        android:gravity="top|center"
         android:textSize="18sp"
         android:background="#dddddd"
         android:padding="4dp"
         android:text="あ\n01a"
+        />
+
+    <CheckBox
+        android:id="@+id/checklist_item_checkbox"
+        android:layout_above="@+id/checklist_item_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clickable="false"
         />
 
     <RelativeLayout
