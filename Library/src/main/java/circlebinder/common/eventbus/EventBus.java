@@ -18,7 +18,7 @@ public final class EventBus {
         return eventBus;
     }
 
-    public static void postIfHas(Object signal, Object event) {
+    public static void eventPost(Object signal, Object event) {
         if (signal instanceof Signal) {
             ((Signal)signal).post(event);
         } else {
