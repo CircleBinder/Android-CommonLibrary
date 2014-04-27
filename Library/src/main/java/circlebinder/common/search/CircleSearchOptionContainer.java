@@ -3,9 +3,10 @@ package circlebinder.common.search;
 import android.view.View;
 import android.widget.EditText;
 
-import circlebinder.common.R;
 import net.ichigotake.common.widget.CursorSwitchOnFocusChangeListener;
 import net.ichigotake.common.widget.OnFocusChangeListeners;
+
+import circlebinder.common.R;
 
 public final class CircleSearchOptionContainer {
 
@@ -38,6 +39,10 @@ public final class CircleSearchOptionContainer {
         return new CircleSearchOption.Builder()
                 .setKeyword(searchText.getText().toString())
                 .build();
+    }
+
+    public void setSearchOption(CircleSearchOption searchOption) {
+        searchText.setText(searchOption.getKeyword());
     }
 
 }
