@@ -22,6 +22,9 @@
     <string name="circlebinder_app_circle_search_option_accessibility">詳細な検索オプション</string>
 
     <!-- その他・アプリ情報など(本筋の機能とは直接関係のないもの) -->
+    <string name="circlebinder_app_about">このアプリについて</string>
+    <string name="circlebinder_app_send_feedback">意見を送る</string>
+    <string name="circlebinder_app_open_source_license">オープンソースライセンス</string>
     <string-array name="circlebinder_app_contact_emails">
         <item >circlebinder@gmail.com</item>
     </string-array>
