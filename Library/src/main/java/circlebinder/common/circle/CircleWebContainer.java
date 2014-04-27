@@ -21,6 +21,7 @@ public final class CircleWebContainer {
         } else {
             webView.getSettings().setJavaScriptEnabled(false);
         }
+        webView.setOnKeyListener(new CircleWebOnKeyListener(webView));
     }
 
     public void loadUrl(String url) {
