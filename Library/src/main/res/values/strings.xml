@@ -25,7 +25,7 @@
     <string-array name="circlebinder_app_contact_emails">
         <item >circlebinder@gmail.com</item>
     </string-array>
-    <string name="circlebinder_app_contact_subject">【ご意見・ご要望】</string>
-    <string name="circlebinder_app_contact_text">こちらにご意見・ご要望を書いて送信してください。\n\n件名の「【ご意見・ご要望】」は消さないようお願いします</string>
+    <string name="circlebinder_app_contact_subject">【ご意見・ご要望】Comic1Binderに関して</string>
+    <string name="circlebinder_app_contact_text"></string>
 
 </resources>
