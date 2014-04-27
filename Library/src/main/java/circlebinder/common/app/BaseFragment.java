@@ -2,6 +2,7 @@ package circlebinder.common.app;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 
 import net.ichigotake.common.os.RestoreBundle;
 import net.ichigotake.common.view.inputmethod.SoftInput;
@@ -18,6 +19,10 @@ abstract public class BaseFragment extends Fragment {
             restoreBundle = new RestoreBundle(this, savedInstanceState);
         }
         return restoreBundle;
+    }
+
+    protected ActionBarActivity getSupportActivity() {
+        return (ActionBarActivity)getActivity();
     }
 
     @Override
