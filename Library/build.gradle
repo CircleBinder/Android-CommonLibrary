@@ -18,7 +18,8 @@ android {
 
 dependencies {
     provided 'com.android.support:appcompat-v7:19.1.0'
-    provided 'com.fourmob.colorpicker:colorpicker:1.0.0-3'
     provided 'com.squareup:otto:1.3.4'
     provided 'se.emilsjolander:stickylistheaders:2.1.4'
+    //@Deprecated 代替UIを考案中。近いうちに依存をはがす
+    provided 'com.fourmob.colorpicker:colorpicker:1.0.0-3'
 }
