@@ -7,7 +7,7 @@ import circlebinder.Legacy;
 //TODO: インターフェースをすっきりさせたい
 public enum ChecklistColor implements Legacy {
     ALL(-1, "全て", "#ffffffff"),
-    NONE(0, "お気に入りからはずす", "#dddddd"),
+    NONE(0, "お気に入りからはずす", "#ffffff"),
     ORANGE(1, "お気に入り", "#FF944A"),
     PINK(2, "お気に入り", "#FF00FF"),
     YELLOW(3, "お気に入り", "#FFF700"),
