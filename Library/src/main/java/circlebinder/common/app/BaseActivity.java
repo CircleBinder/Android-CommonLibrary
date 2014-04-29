@@ -21,12 +21,6 @@ public abstract class BaseActivity extends ActionBarActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return UpNavigation.onOptionsItemSelected(this, item) || super.onOptionsItemSelected(item);
     }
