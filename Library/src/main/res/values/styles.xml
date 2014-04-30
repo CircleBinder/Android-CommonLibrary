@@ -1,9 +1,10 @@
 <resources>
 
-    <color name="circlebinder_app_head_background">#000000</color>
+    <color name="circlebinder_app_head_background">#ff993333</color>
     <color name="circlebinder_app_head_text">#ffffff</color>
     <dimen name="circlebinder_app_head_section_text_size">18sp</dimen>
-    <dimen name="circlebinder_app_head_section_padding">4dp</dimen>
+    <dimen name="circlebinder_app_head_section_padding_vertical">4dp</dimen>
+    <dimen name="circlebinder_app_head_section_padding_horizontal">8dp</dimen>
     <dimen name="circlebinder_app_spacer_small">8dp</dimen>
     <dimen name="circlebinder_app_spacer_middle">16dp</dimen>
     <dimen name="circlebinder_app_spacer_large">24dp</dimen>
@@ -11,9 +12,14 @@
     <style name="CircleBinderSectionHeadTitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/circlebinder_app_head_text</item>
+        <item name="android:background">@color/circlebinder_app_head_background</item>
+        <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">@dimen/circlebinder_app_head_section_text_size</item>
-        <item name="android:padding">@dimen/circlebinder_app_head_section_padding</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">@dimen/circlebinder_app_head_section_padding_vertical</item>
+        <item name="android:paddingRight">@dimen/circlebinder_app_head_section_padding_horizontal</item>
+        <item name="android:paddingBottom">@dimen/circlebinder_app_head_section_padding_vertical</item>
+        <item name="android:paddingLeft">@dimen/circlebinder_app_head_section_padding_horizontal</item>
     </style>
 
     <style name="CircleBinderContentBorder">
