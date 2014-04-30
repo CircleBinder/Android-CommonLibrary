@@ -6,6 +6,8 @@ import android.widget.Spinner;
 import net.ichigotake.common.widget.OnItemSelectedEventListener;
 import net.ichigotake.common.widget.OnItemSelectedListener;
 
+import java.util.List;
+
 public final class ChecklistSelectorContainer {
 
     private final Context context;
@@ -22,15 +24,22 @@ public final class ChecklistSelectorContainer {
         onItemSelectedListener.addOnItemSelectedListener(listener);
     }
 
-    public void initialize() {
+    public void initialize(List<ChecklistColor> selectorItems, ChecklistColor selectedColor) {
         ChecklistSelectorBinder binder = new ChecklistSelectorBinder();
         ChecklistSelectorAdapter adapter = new ChecklistSelectorAdapter(context, binder);
         adapter.clear();
-        adapter.add(ChecklistColor.ALL);
-        for (ChecklistColor color : ChecklistColor.checklists()) {
+
+        int position = 0;
+        int presetPosition = 0;
+        for (ChecklistColor color : selectorItems) {
             adapter.add(color);
+            position++;
+            if (color.equals(selectedColor)) {
+                presetPosition = position;
+            }
         }
         selector.setAdapter(adapter);
+        selector.setSelection(presetPosition);
         selector.setOnItemSelectedListener(onItemSelectedListener);
     }
 
