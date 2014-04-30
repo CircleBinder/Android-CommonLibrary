@@ -20,6 +20,7 @@ public final class Circle implements Parcelable {
         private String penName;
         private List<CircleLink> links;
         private boolean checked;
+        private String freeMemo;
 
         public Builder() {
             links = new CopyOnWriteArrayList<CircleLink>();
@@ -33,6 +34,7 @@ public final class Circle implements Parcelable {
             name = builder.name;
             penName = builder.penName;
             links = builder.links;
+            freeMemo = builder.freeMemo;
         }
 
         public Circle build() {
@@ -85,6 +87,11 @@ public final class Circle implements Parcelable {
             return this;
         }
 
+        public Builder setFreeMemo(String freeMemo) {
+            this.freeMemo = freeMemo;
+            return this;
+        }
+
         public Builder clear() {
             id = 0;
             space = null;
@@ -94,6 +101,7 @@ public final class Circle implements Parcelable {
             penName = null;
             links.clear();
             checked = false;
+            freeMemo = null;
             return this;
         }
 
@@ -107,6 +115,7 @@ public final class Circle implements Parcelable {
     private final String penName;
     private final CircleLinks links;
     private final boolean checked;
+    private final String freeMemo;
 
     private Circle(Builder builder) {
         id = builder.id;
@@ -117,6 +126,7 @@ public final class Circle implements Parcelable {
         penName = builder.penName;
         links = new CircleLinks(builder.links);
         checked = builder.checked;
+        freeMemo = builder.freeMemo;
     }
 
     public int getId() {
@@ -151,6 +161,10 @@ public final class Circle implements Parcelable {
         return checked;
     }
 
+    public String getFreeMemo() {
+        return freeMemo;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -166,6 +180,7 @@ public final class Circle implements Parcelable {
         dest.writeString(this.penName);
         dest.writeParcelable(this.links, 0);
         dest.writeByte(checked ? (byte) 1 : (byte) 0);
+        dest.writeString(this.freeMemo);
     }
 
     private Circle(Parcel in) {
@@ -173,11 +188,12 @@ public final class Circle implements Parcelable {
         this.space = in.readParcelable(Space.class.getClassLoader());
         this.genre = in.readParcelable(Genre.class.getClassLoader());
         int tmpChecklistColor = in.readInt();
-        this.checklistColor = tmpChecklistColor == -1 ? ChecklistColor.NONE : ChecklistColor.values()[tmpChecklistColor];
+        this.checklistColor = tmpChecklistColor == -1 ? null : ChecklistColor.values()[tmpChecklistColor];
         this.name = in.readString();
         this.penName = in.readString();
         this.links = in.readParcelable(CircleLinks.class.getClassLoader());
         this.checked = in.readByte() != 0;
+        this.freeMemo = in.readString();
     }
 
     public static Creator<Circle> CREATOR = new Creator<Circle>() {
