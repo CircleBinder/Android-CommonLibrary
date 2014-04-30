@@ -20,6 +20,8 @@
     <string name="circlebinder_app_circle_search_filter_by_checked">チェック済みを表示</string>
     <string name="circlebinder_app_circle_search_hint">出展サークルを検索</string>
     <string name="circlebinder_app_circle_search_option_accessibility">詳細な検索オプション</string>
+    <string name="circlebinder_circlebinder_circle_check_uncheck">未チェック</string>
+    <string name="circlebinder_circlebinder_circle_check_checked">チェック済み</string>
 
     <!-- その他・アプリ情報など(本筋の機能とは直接関係のないもの) -->
     <string name="circlebinder_app_about">このアプリについて</string>

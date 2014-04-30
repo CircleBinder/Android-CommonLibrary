@@ -27,4 +27,9 @@
         <item >ペンネーム順</item>
     </string-array>
 
+    <string-array name="circle_checked">
+        <item >@string/circlebinder_circlebinder_circle_check_uncheck</item>
+        <item >@string/circlebinder_circlebinder_circle_check_checked</item>
+    </string-array>
+
 </resources>
