@@ -1,5 +1,6 @@
 package circlebinder.common.search;
 
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 
@@ -33,6 +34,10 @@ public final class CircleSearchOptionContainer {
 
     public void addOnFocusChangeListener(View.OnFocusChangeListener listener) {
         focusChangeListeners.addOnFocusChangeListener(listener);
+    }
+
+    public void addTextChangedListener(TextWatcher listener) {
+        searchText.addTextChangedListener(listener);
     }
 
     public CircleSearchOption getSearchOption() {
