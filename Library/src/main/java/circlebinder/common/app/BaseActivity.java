@@ -22,7 +22,7 @@ public abstract class BaseActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return UpNavigation.onOptionsItemSelected(this, item) || super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
 }
