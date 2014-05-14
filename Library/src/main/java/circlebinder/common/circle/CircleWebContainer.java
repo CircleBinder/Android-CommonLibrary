@@ -12,7 +12,7 @@ public final class CircleWebContainer {
     }
 
     public void initialize() {
-        webView.setWebViewClient(new CircleWebClient());
+        webView.setWebViewClient(new CircleWebClient(webView));
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setBuiltInZoomControls(true);
