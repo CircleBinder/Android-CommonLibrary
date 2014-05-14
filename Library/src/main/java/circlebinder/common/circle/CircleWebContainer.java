@@ -3,6 +3,9 @@ package circlebinder.common.circle;
 import android.os.Build;
 import android.webkit.WebView;
 
+import circlebinder.common.event.Circle;
+import circlebinder.common.event.CircleLink;
+
 public final class CircleWebContainer {
 
     private final WebView webView;
@@ -24,11 +27,20 @@ public final class CircleWebContainer {
         webView.setOnKeyListener(new CircleWebOnKeyListener(webView));
     }
 
+    public void loadUrl(CircleLink link) {
+        loadUrl(link.getUri().toString());
+    }
+
     public void loadUrl(String url) {
         webView.loadUrl(url);
+    }
+
+    public void load(Circle circle) {
+        webView.loadUrl("https://google.co.jp/search?q=\"" + circle.getName() + "\"");
     }
 
     public String getCurrentUrl() {
         return webView.getUrl();
     }
+
 }

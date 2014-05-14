@@ -105,6 +105,9 @@ public final class Circle implements Parcelable {
             return this;
         }
 
+        public void setLink(CircleLinks links) {
+            this.links = links.toList();
+        }
     }
 
     private final int id;

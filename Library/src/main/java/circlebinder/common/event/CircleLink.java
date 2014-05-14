@@ -9,6 +9,7 @@ public final class CircleLink implements Parcelable {
     public static class Builder {
         private Uri uri;
         private int iconResource;
+        private CircleLinkType type;
 
         public CircleLink build() {
             return new CircleLink(this);
@@ -23,14 +24,21 @@ public final class CircleLink implements Parcelable {
             this.iconResource = iconResource;
             return this;
         }
+
+        public Builder setType(CircleLinkType type) {
+            this.type = type;
+            return this;
+        }
     }
 
     private final Uri uri;
     private final int iconResource;
+    private final CircleLinkType type;
 
     private CircleLink(Builder builder) {
         uri = builder.uri;
         iconResource = builder.iconResource;
+        this.type = builder.type;
     }
 
     public Uri getUri() {
@@ -39,6 +47,10 @@ public final class CircleLink implements Parcelable {
 
     public int getIconResource() {
         return iconResource;
+    }
+
+    public CircleLinkType getType() {
+        return type;
     }
 
     @Override
@@ -50,11 +62,14 @@ public final class CircleLink implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(this.uri, 0);
         dest.writeInt(this.iconResource);
+        dest.writeInt(this.type == null ? -1 : this.type.ordinal());
     }
 
     private CircleLink(Parcel in) {
         this.uri = in.readParcelable(Uri.class.getClassLoader());
         this.iconResource = in.readInt();
+        int tmpType = in.readInt();
+        this.type = tmpType == -1 ? null : CircleLinkType.values()[tmpType];
     }
 
     public static Creator<CircleLink> CREATOR = new Creator<CircleLink>() {
