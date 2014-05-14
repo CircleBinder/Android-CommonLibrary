@@ -37,6 +37,17 @@ public final class Circle implements Parcelable {
             freeMemo = builder.freeMemo;
         }
 
+        public Builder(Circle circle) {
+            id = circle.getId();
+            space = circle.getSpace();
+            genre = circle.getGenre();
+            checklistColor = circle.getChecklistColor();
+            name = circle.getName();
+            penName = circle.getPenName();
+            links = circle.getLinks().toList();
+            freeMemo = circle.getFreeMemo();
+        }
+
         public Circle build() {
             return new Circle(this);
         }
