@@ -33,10 +33,10 @@ public final class ChecklistSelectorContainer {
         int presetPosition = 0;
         for (ChecklistColor color : selectorItems) {
             adapter.add(color);
-            position++;
             if (color.equals(selectedColor)) {
                 presetPosition = position;
             }
+            position++;
         }
         selector.setAdapter(adapter);
         selector.setSelection(presetPosition);
