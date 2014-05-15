@@ -7,12 +7,12 @@ import android.view.View;
 
 import circlebinder.common.circle.CircleWebContainer;
 
-public final class ActionViewActionProvider extends ActionProvider {
+public final class ReloadWebViewActionProvider extends ActionProvider {
 
     private final Uri uri;
     private final CircleWebContainer webContainer;
 
-    public ActionViewActionProvider(Context context, CircleWebContainer webContainer, Uri uri) {
+    public ReloadWebViewActionProvider(Context context, CircleWebContainer webContainer, Uri uri) {
         super(context);
         this.uri = uri;
         this.webContainer = webContainer;
