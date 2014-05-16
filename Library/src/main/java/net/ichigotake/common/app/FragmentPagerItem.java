@@ -2,22 +2,12 @@ package net.ichigotake.common.app;
 
 import android.support.v4.app.Fragment;
 
-public final class FragmentPagerItem<FRAGMENT extends Fragment> {
+public interface FragmentPagerItem {
 
-    private final CharSequence pagerTitle;
-    private final FragmentFactory<FRAGMENT> fragmentFactory;
+    Fragment getItem(int position);
 
-    public FragmentPagerItem(CharSequence pagerTitle, FragmentFactory<FRAGMENT> fragmentFactory) {
-        this.pagerTitle = pagerTitle;
-        this.fragmentFactory = fragmentFactory;
-    }
+    CharSequence getPageTitle(int position);
 
-    public CharSequence getPageTitle() {
-        return pagerTitle;
-    }
-
-    public FragmentFactory<FRAGMENT> getFactory() {
-        return fragmentFactory;
-    }
+    int getCount();
 
 }

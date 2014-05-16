@@ -8,17 +8,17 @@ import android.view.ViewGroup;
 
 public class FragmentPagerAdapter extends FragmentStatePagerAdapter {
 
-    private final FragmentPagerItemList items;
+    private final FragmentPagerItem item;
     private final SparseArray<Object> registeredPages;
 
-    public FragmentPagerAdapter(FragmentManager fm, FragmentPagerItemList items) {
+    public FragmentPagerAdapter(FragmentManager fm, FragmentPagerItem item) {
         super(fm);
-        this.items = items;
+        this.item = item;
         this.registeredPages = new SparseArray<Object>();
     }
 
     public void reload() {
-        for (int i=0, size=items.size(); i<size; i++) {
+        for (int i=0, size=item.getCount(); i<size; i++) {
             reload(i);
         }
     }
@@ -50,17 +50,17 @@ public class FragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return items.get(position % getCount()).getFactory().create();
+        return item.getItem(position % getCount());
     }
 
     @Override
     public int getCount() {
-        return items.size();
+        return item.getCount();
     }
 
     @Override
     public CharSequence getPageTitle(int location) {
-        return items.get(location).getPageTitle();
+        return item.getPageTitle(location);
     }
 
 }
