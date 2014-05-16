@@ -32,17 +32,14 @@ public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHold
         int backgroundColor = item.getChecklistColor().getColor() + 0xcc000000;
 
         tag.getContainer().setBackgroundColor(backgroundColor);
-        tag.getContainer().setOnClickListener(new OnCircleClickListener(listener, item));
+        tag.getContainer().setOnClickListener(new OnCircleClickListener(listener, item, position));
         tag.getCircleName().setText(item.getName());
         tag.getPenName().setText(item.getPenName());
-        tag.getCircleCut().setOnClickListener(new OnCircleCutClickListener(listener, item));
+        tag.getCircleCut().setOnClickListener(new OnCircleCutClickListener(listener, item, position));
         //TODO: 外部リンクを複数設置出来るようにする。今は1つで決め打ち
         if (item.getLinks().isEmpty()) {
             tag.getLinks().setVisibility(View.GONE);
         } else {
-            tag.getLinks().setOnClickListener(new OnCircleLinksClickListener(
-                    listener, item.getLinks().get(0), item
-            ));
             tag.getLinks().setVisibility(View.VISIBLE);
         }
 
@@ -61,15 +58,17 @@ public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHold
 
         private final CircleOnClickListener listener;
         private final Circle circle;
+        private final int position;
 
-        OnCircleClickListener(CircleOnClickListener listener, Circle circle) {
+        OnCircleClickListener(CircleOnClickListener listener, Circle circle, int position) {
             this.listener = listener;
             this.circle = circle;
+            this.position = position;
         }
 
         @Override
         public void onClick(View v) {
-            listener.onItemClick(circle);
+            listener.onItemClick(circle, position);
         }
     }
 
@@ -77,15 +76,17 @@ public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHold
 
         private final CircleOnClickListener listener;
         private final Circle circle;
+        private final int position;
 
-        private OnCircleCutClickListener(CircleOnClickListener listener, Circle circle) {
+        private OnCircleCutClickListener(CircleOnClickListener listener, Circle circle, int position) {
             this.listener = listener;
             this.circle = circle;
+            this.position = position;
         }
 
         @Override
         public void onClick(View v) {
-            listener.onCircleCutClick(circle);
+            listener.onCircleCutClick(circle, position);
         }
     }
 }

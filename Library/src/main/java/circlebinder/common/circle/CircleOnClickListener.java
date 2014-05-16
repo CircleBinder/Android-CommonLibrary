@@ -1,17 +1,13 @@
 package circlebinder.common.circle;
 
-import android.view.View;
-
 import circlebinder.common.event.Circle;
-import circlebinder.common.event.CircleLink;
 
 public interface CircleOnClickListener {
 
-    void onItemClick(Circle circle);
+    void onItemClick(Circle circle, int position);
 
     void onCheckBoxClick(Circle circle, CircleViewHolder holder, boolean isChecked);
 
-    void onCircleCutClick(Circle circle);
+    void onCircleCutClick(Circle circle, int position);
 
-    void onInfoClick(CircleLink clicked, Circle circle, View view);
 }
