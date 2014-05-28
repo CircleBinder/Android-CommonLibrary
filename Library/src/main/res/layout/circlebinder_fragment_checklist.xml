@@ -21,16 +21,6 @@
             android:layout_marginBottom="4dp"
             />
 
-        <CheckBox
-            android:id="@+id/fragment_checklist_filter"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/circlebinder_app_spacer_small"
-            android:layout_centerVertical="true"
-            android:text="@string/circlebinder_app_circle_search_filter_by_checked"
-            />
-
     </RelativeLayout>
 
     <View style="@style/CircleBinderContentBorder" />

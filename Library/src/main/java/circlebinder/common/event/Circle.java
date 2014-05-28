@@ -19,7 +19,6 @@ public final class Circle implements Parcelable {
         private String name;
         private String penName;
         private List<CircleLink> links;
-        private boolean checked;
         private String freeMemo;
 
         public Builder() {
@@ -93,11 +92,6 @@ public final class Circle implements Parcelable {
             return this;
         }
 
-        public Builder setChecked(boolean checked) {
-            this.checked = checked;
-            return this;
-        }
-
         public Builder setFreeMemo(String freeMemo) {
             this.freeMemo = freeMemo;
             return this;
@@ -111,7 +105,6 @@ public final class Circle implements Parcelable {
             name = null;
             penName = null;
             links.clear();
-            checked = false;
             freeMemo = null;
             return this;
         }
@@ -128,7 +121,6 @@ public final class Circle implements Parcelable {
     private final String name;
     private final String penName;
     private final CircleLinks links;
-    private final boolean checked;
     private final String freeMemo;
 
     private Circle(Builder builder) {
@@ -139,7 +131,6 @@ public final class Circle implements Parcelable {
         name = builder.name;
         penName = builder.penName;
         links = new CircleLinks(builder.links);
-        checked = builder.checked;
         freeMemo = builder.freeMemo;
     }
 
@@ -171,10 +162,6 @@ public final class Circle implements Parcelable {
         return links;
     }
 
-    public boolean isChecked() {
-        return checked;
-    }
-
     public String getFreeMemo() {
         return freeMemo;
     }
@@ -193,7 +180,6 @@ public final class Circle implements Parcelable {
         dest.writeString(this.name);
         dest.writeString(this.penName);
         dest.writeParcelable(this.links, 0);
-        dest.writeByte(checked ? (byte) 1 : (byte) 0);
         dest.writeString(this.freeMemo);
     }
 
@@ -206,7 +192,6 @@ public final class Circle implements Parcelable {
         this.name = in.readString();
         this.penName = in.readString();
         this.links = in.readParcelable(CircleLinks.class.getClassLoader());
-        this.checked = in.readByte() != 0;
         this.freeMemo = in.readString();
     }
 

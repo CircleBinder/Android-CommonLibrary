@@ -1,7 +1,6 @@
 package circlebinder.common.circle;
 
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import circlebinder.common.R;
@@ -16,8 +15,6 @@ public final class CircleViewHolder {
     private final TextView penName;
     private final TextView genre;
     private final TextView space;
-    private final CheckBox checkBox;
-    //TODO: リストを扱えるようにする
     private final View link;
 
     public CircleViewHolder(View container) {
@@ -27,7 +24,6 @@ public final class CircleViewHolder {
         this.penName = (TextView)container.findViewById(R.id.checklist_item_pen_name);
         this.genre = (TextView)container.findViewById(R.id.checklist_item_genre);
         this.space = (TextView)container.findViewById(R.id.checklist_item_space);
-        this.checkBox = (CheckBox)container.findViewById(R.id.checklist_item_checkbox);
         this.link = container.findViewById(R.id.circlebinder_checklist_item_links);
     }
 
@@ -53,10 +49,6 @@ public final class CircleViewHolder {
 
     public TextView getSpace() {
         return space;
-    }
-
-    public CheckBox getCheckBox() {
-        return checkBox;
     }
 
     public View getLinks() {
