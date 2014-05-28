@@ -1,53 +1,47 @@
 package circlebinder.common.search;
 
-import android.text.TextWatcher;
-import android.view.View;
-import android.widget.EditText;
+import android.support.v7.widget.SearchView;
 
-import net.ichigotake.common.widget.CursorSwitchOnFocusChangeListener;
-import net.ichigotake.common.widget.OnFocusChangeListeners;
-
-import circlebinder.common.R;
+import net.ichigotake.common.view.inputmethod.SoftInput;
 
 public final class CircleSearchOptionContainer {
 
-    private final View searchOptionView;
-    private final EditText searchText;
-    private final OnFocusChangeListeners focusChangeListeners;
+    //private final View searchOptionView;
+    private final SearchView searchText;
     private final OnSearchActionListener searchActionListener;
 
-    public CircleSearchOptionContainer(View container, OnSearchActionListener listener) {
-        this.searchOptionView = container.findViewById(R.id.circle_search_option);
-        this.searchText = (EditText)container.findViewById(R.id.circle_search_keyword);
-        this.focusChangeListeners = new OnFocusChangeListeners();
+    public CircleSearchOptionContainer(SearchView container, OnSearchActionListener listener) {
+        //this.searchOptionView = container.findViewById(R.id.circle_search_option);
+        this.searchText = container;
         this.searchActionListener = listener;
     }
 
     public void initialize() {
         //searchOptionView.setOnClickListener(new OnOptionClickListener(searchActionListener));
-        searchText.setOnEditorActionListener(
-                new OnEditorActionListenerImpl(searchActionListener, this)
-        );
-        searchText.setOnFocusChangeListener(focusChangeListeners);
-        focusChangeListeners.addOnFocusChangeListener(new CursorSwitchOnFocusChangeListener());
-    }
+        searchText.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                SoftInput.hide(searchText);
+                searchActionListener.onSearch(getSearchOption());
+                return true;
+            }
 
-    public void addOnFocusChangeListener(View.OnFocusChangeListener listener) {
-        focusChangeListeners.addOnFocusChangeListener(listener);
-    }
-
-    public void addTextChangedListener(TextWatcher listener) {
-        searchText.addTextChangedListener(listener);
+            @Override
+            public boolean onQueryTextChange(String s) {
+                searchActionListener.onSearch(getSearchOption());
+                return true;
+            }
+        });
     }
 
     public CircleSearchOption getSearchOption() {
-        return new CircleSearchOption.Builder()
-                .setKeyword(searchText.getText().toString())
+        return new CircleSearchOptionBuilder()
+                .setKeyword(searchText.getQuery().toString())
                 .build();
     }
 
     public void setSearchOption(CircleSearchOption searchOption) {
-        searchText.setText(searchOption.getKeyword());
+        searchText.setQuery(searchOption.getKeyword(), true);
     }
 
 }
