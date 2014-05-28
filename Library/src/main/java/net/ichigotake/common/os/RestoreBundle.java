@@ -9,8 +9,7 @@ import java.io.Serializable;
 
 public final class RestoreBundle {
 
-    private final Bundle arguments;
-    private final Bundle savedInstanceState;
+    private final Bundle bundle;
 
     public RestoreBundle(Intent intent, Bundle savedInstanceState) {
         this((intent != null) ? intent.getExtras() : null, savedInstanceState);
@@ -20,21 +19,37 @@ public final class RestoreBundle {
         this(fragment.getArguments(), savedInstanceState);
     }
 
+    public RestoreBundle(Bundle bundle) {
+        this.bundle = bundle != null ? bundle : new Bundle();
+    }
+
     private RestoreBundle(Bundle arguments, Bundle savedInstanceState) {
-        this.arguments = (arguments != null) ? arguments : new Bundle();
-        this.savedInstanceState = (savedInstanceState != null) ? savedInstanceState : new Bundle();
+        this(merge(arguments, savedInstanceState));
+    }
+
+    private static Bundle merge(Bundle arguments, Bundle savedInstanceState) {
+        Bundle mergedBundle;
+        if (arguments != null && savedInstanceState != null) {
+            arguments.putAll(savedInstanceState);
+            mergedBundle = arguments;
+        } else if (arguments != null) {
+            mergedBundle = arguments;
+        } else if (savedInstanceState != null) {
+            mergedBundle = savedInstanceState;
+        } else {
+            mergedBundle = new Bundle();
+        }
+        return mergedBundle;
     }
 
     public boolean containsKey(String key) {
-        return arguments.containsKey(key) || savedInstanceState.containsKey(key);
+        return bundle.containsKey(key);
     }
 
     public <T extends Parcelable> T getParcelable(String key) {
         T restoreObject;
-        if (savedInstanceState.containsKey(key)) {
-            restoreObject = savedInstanceState.getParcelable(key);
-        } else if (arguments.containsKey(key)) {
-            restoreObject = arguments.getParcelable(key);
+        if (bundle.containsKey(key)) {
+            restoreObject = bundle.getParcelable(key);
         } else {
             restoreObject = null;
         }
@@ -43,10 +58,8 @@ public final class RestoreBundle {
 
     public <T extends Serializable> T getSerializable(String key) {
         T restoreObject;
-        if (savedInstanceState.containsKey(key)) {
-            restoreObject = (T)savedInstanceState.getSerializable(key);
-        } else if (arguments.containsKey(key)) {
-            restoreObject = (T)arguments.getSerializable(key);
+        if (bundle.containsKey(key)) {
+            restoreObject = (T)bundle.getSerializable(key);
         } else {
             restoreObject = null;
         }
@@ -55,10 +68,8 @@ public final class RestoreBundle {
 
     public int getInt(String key) {
         int restoreObject;
-        if (savedInstanceState.containsKey(key)) {
-            restoreObject = savedInstanceState.getInt(key);
-        } else if (arguments.containsKey(key)) {
-            restoreObject = arguments.getInt(key);
+        if (bundle.containsKey(key)) {
+            restoreObject = bundle.getInt(key);
         } else {
             restoreObject = 0;
         }
