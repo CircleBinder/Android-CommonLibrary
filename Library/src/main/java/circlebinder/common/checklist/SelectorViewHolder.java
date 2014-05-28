@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import circlebinder.common.R;
 
-final class SelectorViewHolder {
+public final class SelectorViewHolder {
 
     private final TextView name;
     private final ImageView icon;
@@ -16,11 +16,11 @@ final class SelectorViewHolder {
         icon = (ImageView)convertView.findViewById(R.id.circlebinder_spinner_dropdown_item_icon);
     }
 
-    TextView getName() {
+    public TextView getName() {
         return name;
     }
 
-    ImageView getIcon() {
+    public ImageView getIcon() {
         return icon;
     }
 }
