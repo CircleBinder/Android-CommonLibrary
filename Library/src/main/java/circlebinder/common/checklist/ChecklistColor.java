@@ -7,8 +7,8 @@ import circlebinder.common.R;
 
 //TODO: インターフェースをすっきりさせたい
 public enum ChecklistColor implements Legacy {
-    ALL(-1, R.drawable.ic_checklist_none, "全て", "#ffffffff"),
-    NONE(0, R.drawable.ic_checklist_none, "お気に入りからはずす", "#ffffff"),
+    ALL(-1, R.drawable.ic_checklist_none, "全て", "#aaaaaa"),
+    NONE(0, R.drawable.ic_checklist_none, "お気に入りからはずす", "#aaaaaa"),
     ORANGE(1, R.drawable.ic_checklist_orange, "お気に入り", "#FF944A"),
     PINK(2, R.drawable.ic_checklist_pink, "お気に入り", "#FF00FF"),
     YELLOW(3, R.drawable.ic_checklist_yellow, "お気に入り", "#FFF700"),
