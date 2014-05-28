@@ -46,4 +46,7 @@ public final class CircleWebContainer {
         return webView.getUrl();
     }
 
+    public void onDestroy() {
+        webView.getSettings().setBuiltInZoomControls(false);
+    }
 }
