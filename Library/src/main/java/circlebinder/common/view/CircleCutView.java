@@ -14,17 +14,23 @@ public class CircleCutView extends RelativeLayout {
 
     public CircleCutView(Context context) {
         super(context);
-        initialize(context);
+        if (isInEditMode()) {
+            initialize(context);
+        }
     }
 
     public CircleCutView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        initialize(context);
+        if (isInEditMode()) {
+            initialize(context);
+        }
     }
 
     public CircleCutView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        initialize(context);
+        if (isInEditMode()) {
+            initialize(context);
+        }
     }
 
     private void initialize(Context context) {
