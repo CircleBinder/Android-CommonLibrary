@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CircleBinderCardContainer"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
-    <include
-        layout="@layout/circlebinder_circle_search_option"
-        android:id="@+id/fragment_circle_search_option"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        />
-
-    <View style="@style/CircleBinderContentBorder" />
-
     <ListView
+        style="@style/CircleBinderCardList"
         android:id="@+id/fragment_circle_search_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fastScrollEnabled="true"
-        android:dividerHeight="0dp"
-        android:divider="@android:color/transparent"
-        android:fadingEdge="none"
-        android:clipToPadding="true"
-        />
+        tools:listitem="@layout/circlebinder_circle_list_item"/>
 
 </LinearLayout>

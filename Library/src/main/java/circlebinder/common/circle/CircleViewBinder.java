@@ -25,7 +25,7 @@ public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHold
     public void bindView(int position, Circle item, CircleViewHolder tag) {
         int backgroundColor = item.getChecklistColor().getColor() + 0xcc000000;
 
-        tag.getContainer().setBackgroundColor(backgroundColor);
+        tag.getSpace().setBackgroundColor(backgroundColor);
         tag.getCircleName().setText(item.getName());
         tag.getPenName().setText(item.getPenName());
         //TODO: 外部リンクを複数設置出来るようにする。今は1つで決め打ち

@@ -1,5 +1,7 @@
 package circlebinder.common.circle;
 
+import android.view.View;
+
 import circlebinder.common.event.Circle;
 
 public interface CircleOnClickListener {
@@ -8,4 +10,5 @@ public interface CircleOnClickListener {
 
     void onCircleCutClick(Circle circle, int position);
 
+    void onSpaceClick(Circle item, int position, View target);
 }
