@@ -15,8 +15,8 @@ public final class FavoriteTest extends AndroidTestCase {
 
         try {
             Favorite got = ParcelUtil.restore(expect);
-            assertEquals(expect.getChecklist(), got.getChecklist());
-            assertEquals(expect.getCircle().getName(), got.getCircle().getName());
+            assert expect.getChecklist() == got.getChecklist();
+            assert expect.getCircle().getName().equals(got.getCircle().getName());
         } catch (Exception e) {
             e.printStackTrace();
             fail();

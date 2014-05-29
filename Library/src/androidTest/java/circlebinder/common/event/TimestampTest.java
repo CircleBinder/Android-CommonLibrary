@@ -14,7 +14,7 @@ public final class TimestampTest extends AndroidTestCase {
 
         try {
             Timestamp got = ParcelUtil.restore(expect);
-            assertEquals(expect.getDisplayName(), got.getDisplayName());
+            assert expect.getDisplayName().equals(got.getDisplayName());
             assertEquals(expect.getTimestamp(), got.getTimestamp());
         } catch (Exception e) {
             e.printStackTrace();

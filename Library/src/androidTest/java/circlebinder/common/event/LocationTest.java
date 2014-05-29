@@ -14,8 +14,8 @@ public final class LocationTest extends AndroidTestCase {
 
         try {
             Location got = ParcelUtil.restore(expect);
-            assertEquals(expect.getDisplayName(), got.getDisplayName());
-            assertEquals(expect.getLink(), got.getLink());
+            assert expect.getDisplayName().equals(got.getDisplayName());
+            assert expect.getLink().equals(got.getLink());
         } catch (Exception e) {
             e.printStackTrace();
             fail();

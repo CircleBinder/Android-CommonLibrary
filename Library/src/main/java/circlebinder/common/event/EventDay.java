@@ -30,6 +30,11 @@ public final class EventDay implements Parcelable {
     }
 
     @Override
+    public boolean equals(Object object) {
+        return object instanceof EventDay && name.equals(((EventDay) object).getName());
+    }
+
+    @Override
     public int describeContents() {
         return 0;
     }

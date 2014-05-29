@@ -54,6 +54,11 @@ public final class CircleLink implements Parcelable {
     }
 
     @Override
+    public boolean equals(Object object) {
+        return object instanceof CircleLink && uri.equals(((CircleLink)object).getUri());
+    }
+
+    @Override
     public int describeContents() {
         return 0;
     }

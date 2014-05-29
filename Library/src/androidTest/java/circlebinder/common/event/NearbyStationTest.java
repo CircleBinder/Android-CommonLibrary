@@ -13,7 +13,7 @@ public final class NearbyStationTest extends AndroidTestCase {
 
         try {
             NearbyStation got = ParcelUtil.restore(expect);
-            assertEquals(expect.getDisplay(), got.getDisplay());
+            assert expect.getDisplay().equals(got.getDisplay());
         } catch (Exception e) {
             e.printStackTrace();
             fail();

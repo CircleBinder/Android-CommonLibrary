@@ -14,8 +14,8 @@ public final class GenreTest extends AndroidTestCase {
 
         try {
             Genre got = ParcelUtil.restore(expect);
-            assertEquals(expect.getId(), got.getId());
-            assertEquals(expect.getName(), got.getName());
+            assert expect.getId() == got.getId();
+            assert expect.getName().equals(got.getName());
         } catch (Exception e) {
             e.printStackTrace();
             fail();

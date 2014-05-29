@@ -38,6 +38,31 @@ public final class CircleLinks implements Parcelable {
     }
 
     @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof  CircleLinks)) {
+            return false;
+        }
+
+        List<CircleLink> objectList = ((CircleLinks)object).toList();
+        boolean equals = true;
+        final int size = size();
+        if (size != objectList.size()) {
+            return false;
+        }
+
+        for (int i=0; i<size; i++) {
+            CircleLink objectItem = objectList.get(i);
+            CircleLink expectedItem = get(i);
+            if (!expectedItem.equals(objectItem)) {
+                equals = false;
+                break;
+            }
+        }
+
+        return equals;
+    }
+
+    @Override
     public int describeContents() {
         return 0;
     }

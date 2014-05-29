@@ -1,4 +1,5 @@
 apply plugin: 'android-library'
+apply plugin: 'android-power-assert'
 apply from: '../gradle/common.gradle'
 
 def theVersionCode = 1

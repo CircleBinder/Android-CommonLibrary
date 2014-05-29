@@ -15,9 +15,9 @@ public final class EventTest extends AndroidTestCase {
 
         try {
             Event got = ParcelUtil.restore(expect);
-            assertEquals(expect.getName(), got.getName());
-            assertEquals(expect.getDay().getName(), got.getDay().getName());
-            assertEquals(expect.getLocation().getDisplayName(), got.getLocation().getDisplayName());
+            assert expect.getName().equals(got.getName());
+            assert expect.getDay().equals(got.getDay());
+            assert expect.getLocation().getDisplayName().equals(got.getLocation().getDisplayName());
         } catch (Exception e) {
             e.printStackTrace();
             fail();

@@ -17,11 +17,11 @@ public final class SpaceTest extends AndroidTestCase {
 
         try {
             Space got = ParcelUtil.restore(expect);
-            assertEquals(expect.getName(), got.getName());
-            assertEquals(expect.getNo(), got.getNo());
-            assertEquals(expect.getNoSub(), got.getNoSub());
-            assertEquals(expect.getBlockName(), got.getBlockName());
-            assertEquals(expect.getSimpleName(), got.getSimpleName());
+            assert expect.getName().equals(got.getName());
+            assert expect.getNo() == got.getNo();
+            assert expect.getNoSub().equals(got.getNoSub());
+            assert expect.getBlockName().equals(got.getBlockName());
+            assert expect.getSimpleName().equals(got.getSimpleName());
         } catch (Exception e) {
             e.printStackTrace();
             fail();

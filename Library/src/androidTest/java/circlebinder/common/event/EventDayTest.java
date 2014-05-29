@@ -13,7 +13,7 @@ public final class EventDayTest extends AndroidTestCase {
 
         try {
             EventDay got = ParcelUtil.restore(expect);
-            assertEquals(expect.getName(), got.getName());
+            assert expect.equals(got);
         } catch (Exception e) {
             e.printStackTrace();
             fail();

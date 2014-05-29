@@ -16,20 +16,19 @@ public final class CircleTest extends AndroidTestCase {
                 .setChecklistColor(ChecklistColor.GREEN)
                 .setGenre(new Genre.Builder().setName("銀河ジャンル").build())
                 .setSpace(new Space.Builder().setName("銀河スペース").build())
+                .setSpace(null)
                 .addLink(new CircleLink.Builder().setUri(Uri.parse("http://my.homepage.com")).build())
                 .build();
 
         try {
             Circle got = ParcelUtil.restore(expect);
-            assertEquals(expect.getId(), got.getId());
-            assertEquals(expect.getName(), got.getName());
-            assertEquals(expect.getPenName(), got.getPenName());
-            assertEquals(expect.getChecklistColor(), got.getChecklistColor());
-            assertEquals(expect.getGenre().getName(), got.getGenre().getName());
-            assertEquals(expect.getSpace().getName(), got.getSpace().getName());
-            assertEquals(expect.getLinks().isEmpty(), got.getLinks().isEmpty());
-            assertEquals(expect.getLinks().size(), got.getLinks().size());
-            assertEquals(expect.getLinks().get(0).getUri().toString(), got.getLinks().get(0).getUri().toString());
+            assert expect.getId() == got.getId();
+            assert expect.getName().equals(got.getName());
+            assert expect.getPenName().equals(got.getPenName());
+            assert expect.getChecklistColor() == got.getChecklistColor();
+            assert expect.getGenre().getName().equals(got.getGenre().getName());
+            assert expect.getSpace().getName().equals(got.getSpace().getName());
+            assert expect.getLinks().equals(got.getLinks());
         } catch (Exception e) {
             e.printStackTrace();
             fail();
