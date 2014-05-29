@@ -109,7 +109,7 @@ public final class Circle implements Parcelable {
             return this;
         }
 
-        public void setLink(CircleLinks links) {
+        public void setLink(CircleLinksRenameForLinux links) {
             this.links = links.toList();
         }
     }
@@ -120,7 +120,7 @@ public final class Circle implements Parcelable {
     private final ChecklistColor checklistColor;
     private final String name;
     private final String penName;
-    private final CircleLinks links;
+    private final CircleLinksRenameForLinux links;
     private final String freeMemo;
 
     private Circle(Builder builder) {
@@ -130,7 +130,7 @@ public final class Circle implements Parcelable {
         checklistColor = builder.checklistColor;
         name = builder.name;
         penName = builder.penName;
-        links = new CircleLinks(builder.links);
+        links = new CircleLinksRenameForLinux(builder.links);
         freeMemo = builder.freeMemo;
     }
 
@@ -158,7 +158,7 @@ public final class Circle implements Parcelable {
         return penName;
     }
 
-    public CircleLinks getLinks() {
+    public CircleLinksRenameForLinux getLinks() {
         return links;
     }
 
@@ -191,7 +191,7 @@ public final class Circle implements Parcelable {
         this.checklistColor = tmpChecklistColor == -1 ? null : ChecklistColor.values()[tmpChecklistColor];
         this.name = in.readString();
         this.penName = in.readString();
-        this.links = in.readParcelable(CircleLinks.class.getClassLoader());
+        this.links = in.readParcelable(CircleLinksRenameForLinux.class.getClassLoader());
         this.freeMemo = in.readString();
     }
 
