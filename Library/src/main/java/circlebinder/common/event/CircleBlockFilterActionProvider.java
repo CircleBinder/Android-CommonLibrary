@@ -36,7 +36,15 @@ public final class CircleBlockFilterActionProvider extends ActionProvider {
     }
 
     public void setSelection(Block block) {
-        blockIconView.setSelection(block.getId() > 0 ? block.getId() : 1);
+        final int position;
+        if (block == null) {
+            position = 0;
+        } else if (block.getId() > 0) {
+            position = block.getId();
+        } else {
+            position = 1;
+        }
+        blockIconView.setSelection(position);
     }
 
     @Override
