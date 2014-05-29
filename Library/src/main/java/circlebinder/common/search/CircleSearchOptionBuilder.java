@@ -26,7 +26,7 @@ public final class CircleSearchOptionBuilder implements Parcelable {
     }
 
     public CircleSearchOption build() {
-        return new CircleSearchOptionImpl(this);
+        return new CircleSearchOption(this);
     }
 
     public CircleSearchOptionBuilder setKeyword(String keyword) {
