@@ -7,6 +7,7 @@ import java.lang.reflect.Field;
 
 public final class ParcelUtil {
 
+    @SuppressWarnings("unchecked")
     public static <T extends Parcelable> T restore(T object) throws Exception {
         Parcel parcel = Parcel.obtain();
 
