@@ -7,17 +7,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public final class CircleLinksRenameForLinux implements Parcelable {
+public final class CircleLinks implements Parcelable {
 
     private final List<CircleLink> links = new CopyOnWriteArrayList<CircleLink>();
 
-    public CircleLinksRenameForLinux() {}
+    public CircleLinks() {}
 
-    public CircleLinksRenameForLinux(List<CircleLink> links) {
+    public CircleLinks(List<CircleLink> links) {
         this.links.addAll(links);
     }
 
-    public CircleLinksRenameForLinux(CircleLink[] links) {
+    public CircleLinks(CircleLink[] links) {
         this.links.addAll( Arrays.asList(links));
     }
 
@@ -39,11 +39,11 @@ public final class CircleLinksRenameForLinux implements Parcelable {
 
     @Override
     public boolean equals(Object object) {
-        if (!(object instanceof CircleLinksRenameForLinux)) {
+        if (!(object instanceof CircleLinks)) {
             return false;
         }
 
-        List<CircleLink> objectList = ((CircleLinksRenameForLinux)object).toList();
+        List<CircleLink> objectList = ((CircleLinks)object).toList();
         boolean equals = true;
         final int size = size();
         if (size != objectList.size()) {
@@ -72,17 +72,17 @@ public final class CircleLinksRenameForLinux implements Parcelable {
         dest.writeTypedList(links);
     }
 
-    private CircleLinksRenameForLinux(Parcel in) {
+    private CircleLinks(Parcel in) {
         in.readTypedList(links, CircleLink.CREATOR);
     }
 
-    public static Creator<CircleLinksRenameForLinux> CREATOR = new Creator<CircleLinksRenameForLinux>() {
-        public CircleLinksRenameForLinux createFromParcel(Parcel source) {
-            return new CircleLinksRenameForLinux(source);
+    public static Creator<CircleLinks> CREATOR = new Creator<CircleLinks>() {
+        public CircleLinks createFromParcel(Parcel source) {
+            return new CircleLinks(source);
         }
 
-        public CircleLinksRenameForLinux[] newArray(int size) {
-            return new CircleLinksRenameForLinux[size];
+        public CircleLinks[] newArray(int size) {
+            return new CircleLinks[size];
         }
     };
 }
