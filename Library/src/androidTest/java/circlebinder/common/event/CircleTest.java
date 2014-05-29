@@ -16,7 +16,6 @@ public final class CircleTest extends AndroidTestCase {
                 .setChecklistColor(ChecklistColor.GREEN)
                 .setGenre(new Genre.Builder().setName("銀河ジャンル").build())
                 .setSpace(new Space.Builder().setName("銀河スペース").build())
-                .setSpace(null)
                 .addLink(new CircleLink.Builder().setUri(Uri.parse("http://my.homepage.com")).build())
                 .build();
 
