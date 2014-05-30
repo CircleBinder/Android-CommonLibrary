@@ -3,41 +3,13 @@ package circlebinder.common.event;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public final class Event implements Parcelable {
-
-    public static class Builder {
-
-        private String name;
-        private Location location;
-        private EventDay day;
-
-        public Event build() {
-            return new Event(this);
-        }
-
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder setLocation(Location location) {
-            this.location = location;
-            return this;
-        }
-
-        public Builder setDay(EventDay day) {
-            this.day = day;
-            return this;
-        }
-
-    }
-
+public class Event implements Parcelable {
 
     private final String name;
     private final Location location;
     private final EventDay day;
 
-    private Event(Builder builder) {
+    Event(EventBuilder builder) {
         name = builder.name;
         location = builder.location;
         day = builder.day;

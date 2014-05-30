@@ -12,7 +12,7 @@ public final class SpaceFactory {
         int spaceNo = Integer.parseInt(name.substring(1, 3));
         String spaceNuSub = name.substring(3);
 
-        return new Space.Builder()
+        return new SpaceBuilder()
                 .setBlockName(blockName)
                 .setNo(spaceNo)
                 .setNoSub(spaceNuSub)

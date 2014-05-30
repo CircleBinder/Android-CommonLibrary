@@ -3,116 +3,9 @@ package circlebinder.common.event;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 import circlebinder.common.checklist.ChecklistColor;
 
-public final class Circle implements Parcelable {
-
-    public static class Builder {
-
-        private int id;
-        private Space space;
-        private Genre genre;
-        private ChecklistColor checklistColor;
-        private String name;
-        private String penName;
-        private List<CircleLink> links;
-        private String freeMemo;
-
-        public Builder() {
-            links = new CopyOnWriteArrayList<CircleLink>();
-        }
-
-        public Builder(Builder builder) {
-            id = builder.id;
-            space = builder.space;
-            genre = builder.genre;
-            checklistColor = builder.checklistColor;
-            name = builder.name;
-            penName = builder.penName;
-            links = builder.links;
-            freeMemo = builder.freeMemo;
-        }
-
-        public Builder(Circle circle) {
-            id = circle.getId();
-            space = circle.getSpace();
-            genre = circle.getGenre();
-            checklistColor = circle.getChecklistColor();
-            name = circle.getName();
-            penName = circle.getPenName();
-            links = circle.getLinks().toList();
-            freeMemo = circle.getFreeMemo();
-        }
-
-        public Circle build() {
-            return new Circle(this);
-        }
-
-        public Builder addLink(CircleLink link) {
-            this.links.add(link);
-            return this;
-        }
-
-        public Builder setLink(CircleLink link) {
-            this.links.clear();
-            this.links.add(link);
-            return this;
-        }
-
-        public Builder setPenName(String penName) {
-            this.penName = penName;
-            return this;
-        }
-
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder setChecklistColor(ChecklistColor checklistColor) {
-            this.checklistColor = checklistColor;
-            return this;
-        }
-
-        public Builder setGenre(Genre genre) {
-            this.genre = genre;
-            return this;
-        }
-
-        public Builder setSpace(Space space) {
-            this.space = space;
-            return this;
-        }
-
-        public Builder setId(int id) {
-            this.id = id;
-            return this;
-        }
-
-        public Builder setFreeMemo(String freeMemo) {
-            this.freeMemo = freeMemo;
-            return this;
-        }
-
-        public Builder clear() {
-            id = 0;
-            space = null;
-            genre = null;
-            checklistColor = null;
-            name = null;
-            penName = null;
-            links.clear();
-            freeMemo = null;
-            return this;
-        }
-
-        public void setLink(CircleLinks links) {
-            this.links = links.toList();
-        }
-    }
+public class Circle implements Parcelable {
 
     private final int id;
     private final Space space;
@@ -123,7 +16,7 @@ public final class Circle implements Parcelable {
     private final CircleLinks links;
     private final String freeMemo;
 
-    private Circle(Builder builder) {
+    Circle(CircleBuilder builder) {
         id = builder.id;
         space = builder.space;
         genre = builder.genre;

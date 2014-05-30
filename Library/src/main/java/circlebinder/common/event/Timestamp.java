@@ -3,33 +3,12 @@ package circlebinder.common.event;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public final class Timestamp implements Parcelable {
-
-    public static class Builder {
-
-        private long timestamp;
-        private String displayName;
-
-        public Timestamp build() {
-            return new Timestamp(this);
-        }
-
-        public Builder setTimestamp(long timestamp) {
-            this.timestamp = timestamp;
-            return this;
-        }
-
-        public Builder setDisplayName(String displayName) {
-            this.displayName = displayName;
-            return this;
-        }
-
-    }
+public class Timestamp implements Parcelable {
 
     private final long timestamp;
     private final String displayName;
 
-    private Timestamp(Builder builder) {
+    Timestamp(TimestampBuilder builder) {
         timestamp = builder.timestamp;
         displayName = builder.displayName;
     }

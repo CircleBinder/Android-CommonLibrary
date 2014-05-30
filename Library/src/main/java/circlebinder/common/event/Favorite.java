@@ -5,33 +5,12 @@ import android.os.Parcelable;
 
 import circlebinder.common.checklist.ChecklistColor;
 
-public final class Favorite implements Parcelable {
-
-    public static class Builder {
-
-        private ChecklistColor checklistColor;
-        private Circle circle;
-
-        public Favorite build() {
-            return new Favorite(this);
-        }
-
-        public Builder setCircle(Circle circle) {
-            this.circle = circle;
-            return this;
-        }
-
-        public Builder setChecklistColor(ChecklistColor color) {
-            this.checklistColor = color;
-            return this;
-        }
-
-    }
+public class Favorite implements Parcelable {
 
     private final ChecklistColor checklistColor;
     private final Circle circle;
 
-    private Favorite(Builder builder) {
+    Favorite(FavoriteBuilder builder) {
         checklistColor = builder.checklistColor;
         circle = builder.circle;
     }

@@ -4,38 +4,13 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public final class CircleLink implements Parcelable {
-
-    public static class Builder {
-        private Uri uri;
-        private int iconResource;
-        private CircleLinkType type;
-
-        public CircleLink build() {
-            return new CircleLink(this);
-        }
-
-        public Builder setUri(Uri uri) {
-            this.uri = uri;
-            return this;
-        }
-
-        public Builder setIcon(int iconResource) {
-            this.iconResource = iconResource;
-            return this;
-        }
-
-        public Builder setType(CircleLinkType type) {
-            this.type = type;
-            return this;
-        }
-    }
+public class CircleLink implements Parcelable {
 
     private final Uri uri;
     private final int iconResource;
     private final CircleLinkType type;
 
-    private CircleLink(Builder builder) {
+    CircleLink(CircleLinkBuilder builder) {
         uri = builder.uri;
         iconResource = builder.iconResource;
         this.type = builder.type;

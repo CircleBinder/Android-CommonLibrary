@@ -3,25 +3,11 @@ package circlebinder.common.event;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public final class NearbyStation implements Parcelable {
-
-    public static class Builder {
-
-        private String display;
-
-        public NearbyStation build() {
-            return new NearbyStation(this);
-        }
-
-        public Builder setDisplay(String display) {
-            this.display = display;
-            return this;
-        }
-    }
+public class NearbyStation implements Parcelable {
 
     private final String display;
 
-    private NearbyStation(Builder builder) {
+    NearbyStation(NearbyStationBuilder builder) {
         display = builder.display;
     }
 

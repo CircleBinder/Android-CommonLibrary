@@ -2,32 +2,12 @@ package circlebinder.common.event;
 
 import android.os.Parcel;
 
-public final class Genre implements android.os.Parcelable {
-
-    public static class Builder {
-
-        private int id;
-        private String name;
-
-        public Genre build() {
-            return new Genre(this);
-        }
-
-        public Builder setId(int id) {
-            this.id = id;
-            return this;
-        }
-
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-    }
+public class Genre implements android.os.Parcelable {
 
     private final int id;
     private final String name;
 
-    private Genre(Builder builder) {
+    Genre(GenreBuilder builder) {
         id = builder.id;
         name = builder.name;
     }

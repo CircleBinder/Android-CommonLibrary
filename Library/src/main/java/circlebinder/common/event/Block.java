@@ -3,41 +3,12 @@ package circlebinder.common.event;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public final class Block implements android.os.Parcelable {
-
-    public static class Builder {
-
-        private int id;
-        private Area area;
-
-        private String name;
-
-        public Block build() {
-            return new Block(this);
-        }
-
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder setArea(Area area) {
-            this.area = area;
-            return this;
-        }
-
-        public Builder setId(int id) {
-            this.id = id;
-            return this;
-        }
-
-    }
-
+public class Block implements Parcelable {
     private final int id;
     private final Area area;
     private final String name;
 
-    private Block(Builder builder) {
+    Block(BlockBuilder builder) {
         id = builder.id;
         area = builder.area;
         name = builder.name;
@@ -55,7 +26,6 @@ public final class Block implements android.os.Parcelable {
         return name;
     }
 
-    @Override
     public int describeContents() {
         return 0;
     }
@@ -82,4 +52,5 @@ public final class Block implements android.os.Parcelable {
             return new Block[size];
         }
     };
+
 }
