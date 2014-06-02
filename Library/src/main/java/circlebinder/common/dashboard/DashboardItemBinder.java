@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import net.ichigotake.common.app.OnClickToTrip;
 import net.ichigotake.common.widget.SectionHeaderBinder;
 
 import circlebinder.common.R;
@@ -46,10 +45,5 @@ public final class DashboardItemBinder
     @Override
     public void bindView(int position, DashboardItem item, DashboardItemViewHolder tag) {
         tag.getLabel().setText(item.getLabel());
-        if (item.getTripper() == null) {
-            tag.getLabel().setOnClickListener(null);
-        } else {
-            tag.getLabel().setOnClickListener(new OnClickToTrip(item.getTripper()));
-        }
     }
 }

@@ -1,7 +1,5 @@
 package circlebinder.common.dashboard;
 
-import net.ichigotake.common.app.Tripper;
-
 public final class DashboardItem {
 
     public final static class Builder {
@@ -9,7 +7,6 @@ public final class DashboardItem {
         private String label;
         private String sectionTitle;
         private long sectionTitleId;
-        private Tripper tripper;
 
         public DashboardItem build() {
             return new DashboardItem(this);
@@ -35,25 +32,18 @@ public final class DashboardItem {
             return this;
         }
 
-        public Builder setTripper(Tripper tripper) {
-            this.tripper = tripper;
-            return this;
-        }
-
     }
 
     private final int iconResource;
     private final String label;
     private final String sectionTitle;
     private final long sectionTitleId;
-    private final Tripper tripper;
 
     private DashboardItem(Builder builder) {
         this.iconResource = builder.iconResource;
         this.label = builder.label;
         this.sectionTitle = builder.sectionTitle;
         this.sectionTitleId = builder.sectionTitleId;
-        this.tripper = builder.tripper;
     }
 
     public int getIconResource() {
@@ -72,7 +62,4 @@ public final class DashboardItem {
         return sectionTitleId;
     }
 
-    public Tripper getTripper() {
-        return tripper;
-    }
 }
