@@ -28,12 +28,6 @@ public final class CircleViewBinder implements ViewBinder<Circle, CircleViewHold
         tag.getSpace().setBackgroundColor(backgroundColor);
         tag.getCircleName().setText(item.getName());
         tag.getPenName().setText(item.getPenName());
-        //TODO: 外部リンクを複数設置出来るようにする。今は1つで決め打ち
-        if (item.getLinks().isEmpty()) {
-            tag.getLinks().setVisibility(View.GONE);
-        } else {
-            tag.getLinks().setVisibility(View.VISIBLE);
-        }
 
         tag.getCircleCut().setVisibility(View.GONE);
         tag.getSpace().setText(
