@@ -24,5 +24,6 @@ public final class BlockSelectorBinder implements ViewBinder<Block, SelectorView
     @Override
     public void bindView(int position, Block item, SelectorViewHolder tag) {
         tag.getName().setText(item.getName());
+        tag.getIcon().setVisibility(View.GONE);
     }
 }
