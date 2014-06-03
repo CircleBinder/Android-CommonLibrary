@@ -37,8 +37,10 @@ public final class CircleWebContainer {
 
     public void load(Circle circle) {
         webView.loadUrl(
-                "https://google.co.jp/search?q=\"" + circle.getName() + "\""
-                        + "%20\"" + circle.getPenName() + "\""
+                "https://google.co.jp/search?q="
+                        + "\"" + circle.getName() + "\""
+                        + "%20"
+                        + "\"" + circle.getPenName() + "\""
         );
     }
 
