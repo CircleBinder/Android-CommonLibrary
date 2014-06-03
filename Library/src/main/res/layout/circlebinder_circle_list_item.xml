@@ -2,6 +2,7 @@
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CircleBinderCardItem"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="64dp"
@@ -19,7 +20,6 @@
         android:text="あ\n01a"
         android:textColor="#ffffff"
         android:textStyle="bold"
-        android:clickable="true"
         />
 
     <RelativeLayout
@@ -36,7 +36,6 @@
 
         <RelativeLayout
             android:layout_toRightOf="@+id/checklist_item_circle_cut"
-            android:layout_toLeftOf="@+id/circlebinder_checklist_item_links"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="4dp"
