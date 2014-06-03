@@ -15,6 +15,12 @@ android {
         versionCode theVersionCode
         versionName theVersionName
     }
+
+    dexOptions {
+        //TODO: for CI setting
+        incremental true
+        preDexLibraries true
+    }
 }
 
 dependencies {
