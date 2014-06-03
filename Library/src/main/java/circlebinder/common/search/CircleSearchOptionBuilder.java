@@ -5,13 +5,14 @@ import android.os.Parcelable;
 
 import circlebinder.common.checklist.ChecklistColor;
 import circlebinder.common.event.Block;
+import circlebinder.common.event.BlockBuilder;
 
 public final class CircleSearchOptionBuilder implements Parcelable {
 
     String keyword;
     Order order;
     //TODO: ハードコーディングをやめる
-    Block block = new Block.Builder().setId(-1).build();
+    Block block = new BlockBuilder().setId(-1).build();
     ChecklistColor checklistColor;
 
     public CircleSearchOptionBuilder() {
