@@ -12,9 +12,7 @@ public final class CircleSearchOptionContainer {
     public CircleSearchOptionContainer(SearchView container, OnSearchActionListener listener) {
         this.searchText = container;
         this.searchActionListener = listener;
-    }
 
-    public void initialize() {
         searchText.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

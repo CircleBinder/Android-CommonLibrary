@@ -1,6 +1,5 @@
 package circlebinder.common.checklist;
 
-import android.content.Context;
 import android.widget.Spinner;
 
 import net.ichigotake.common.widget.OnItemSelectedEventListener;
@@ -10,23 +9,14 @@ import java.util.Collection;
 
 public final class ChecklistSelectorContainer {
 
-    private final Context context;
-    private final Spinner selector;
     private final OnItemSelectedListener<ChecklistColor> onItemSelectedListener;
 
-    public ChecklistSelectorContainer(Spinner selector) {
-        this.context = selector.getContext();
-        this.selector = selector;
+    public ChecklistSelectorContainer(Spinner selector, Collection<ChecklistColor> selectorItems,
+                                      ChecklistColor selectedColor) {
         this.onItemSelectedListener = new OnItemSelectedListener<ChecklistColor>();
-    }
 
-    public void addOnItemSelectedListener(OnItemSelectedEventListener<ChecklistColor> listener) {
-        onItemSelectedListener.addOnItemSelectedListener(listener);
-    }
-
-    public void initialize(Collection<ChecklistColor> selectorItems, ChecklistColor selectedColor) {
         ChecklistSelectorBinder binder = new ChecklistSelectorBinder();
-        ChecklistSelectorAdapter adapter = new ChecklistSelectorAdapter(context, binder);
+        ChecklistSelectorAdapter adapter = new ChecklistSelectorAdapter(selector.getContext(), binder);
         adapter.clear();
 
         int position = 0;
@@ -41,6 +31,10 @@ public final class ChecklistSelectorContainer {
         selector.setAdapter(adapter);
         selector.setSelection(presetPosition);
         selector.setOnItemSelectedListener(onItemSelectedListener);
+    }
+
+    public void addOnItemSelectedListener(OnItemSelectedEventListener<ChecklistColor> listener) {
+        onItemSelectedListener.addOnItemSelectedListener(listener);
     }
 
 }

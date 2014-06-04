@@ -20,8 +20,7 @@ public final class ChecklistFilterActionProvider extends ActionProvider {
     public ChecklistFilterActionProvider(Context context, Collection<ChecklistColor> checklists) {
         super(context);
         selector = new Spinner(getContext());
-        container = new ChecklistSelectorContainer(selector);
-        container.initialize(checklists, ChecklistColor.ALL);
+        container = new ChecklistSelectorContainer(selector, checklists, ChecklistColor.ALL);
     }
 
     public void addOnItemSelectedListener(OnItemSelectedEventListener<ChecklistColor> listener) {
