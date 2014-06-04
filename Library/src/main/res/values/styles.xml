@@ -1,41 +1,16 @@
 <resources>
 
-    <color name="circlebinder_app_head_background">#ff993333</color>
-    <color name="circlebinder_app_head_text">#ffffff</color>
-    <color name="circlebinder_app_card_item_background">#ffffff</color>
-    <color name="circlebinder_app_card_container_background">#eeeeee</color>
-
-    <dimen name="circlebinder_app_head_section_text_size">18sp</dimen>
-    <dimen name="circlebinder_app_head_section_padding_vertical">4dp</dimen>
-    <dimen name="circlebinder_app_head_section_padding_horizontal">8dp</dimen>
-    <dimen name="circlebinder_app_spacer_small">8dp</dimen>
-    <dimen name="circlebinder_app_spacer_middle">16dp</dimen>
-    <dimen name="circlebinder_app_spacer_large">24dp</dimen>
-
     <style name="CircleBinderSectionHeadTitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@color/circlebinder_app_head_background</item>
         <item name="android:textColor">#ffffff</item>
-        <item name="android:textSize">@dimen/circlebinder_app_head_section_text_size</item>
+        <item name="android:textSize">@dimen/circlebinder_head_section_text_size</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:paddingTop">@dimen/circlebinder_app_head_section_padding_vertical</item>
-        <item name="android:paddingRight">@dimen/circlebinder_app_head_section_padding_horizontal</item>
-        <item name="android:paddingBottom">@dimen/circlebinder_app_head_section_padding_vertical</item>
-        <item name="android:paddingLeft">@dimen/circlebinder_app_head_section_padding_horizontal</item>
-    </style>
-
-    <style name="CircleBinderContentBorder">
-        <item name="android:layout_height">2dp</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:background">#888888</item>
-    </style>
-
-    <style name="CircleBinderHomeFavoriteMore">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center|right</item>
-        <item name="android:padding">20dp</item>
+        <item name="android:paddingTop">@dimen/circlebinder_head_section_padding_vertical</item>
+        <item name="android:paddingRight">@dimen/circlebinder_head_section_padding_horizontal</item>
+        <item name="android:paddingBottom">@dimen/circlebinder_head_section_padding_vertical</item>
+        <item name="android:paddingLeft">@dimen/circlebinder_head_section_padding_horizontal</item>
     </style>
 
     <style name="CircleBinderCircleCutView">
@@ -51,27 +26,6 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="CircleBinderSpacerHorizontalSmall">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:minWidth">@dimen/circlebinder_app_spacer_small</item>
-    </style>
-
-    <style name="CircleBinderSpacerVerticalSmall">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/circlebinder_app_spacer_small</item>
-    </style>
-
-    <style name="CircleBinderSpacerVerticalMiddle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/circlebinder_app_spacer_middle</item>
-    </style>
-
-    <style name="CircleBinderSpacerVerticalLarge">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/circlebinder_app_spacer_large</item>
-    </style>
-
     <style name="CircleBinderCardContainer">
         <item name="android:background">@color/circlebinder_app_card_container_background</item>
     </style>
@@ -82,13 +36,13 @@
         <item name="android:textFilterEnabled">true</item>
         <item name="android:divider">@color/circlebinder_app_card_container_background</item>
         <item name="android:dividerHeight">2dp</item>
+        <item name="android:background">@color/circlebinder_app_card_item_background</item>
         <item name="android:clipToPadding">true</item>
         <item name="android:fadingEdge">none</item>
         <item name="android:listSelector">@drawable/abc_list_selector_holo_light</item>
     </style>
 
     <style name="CircleBinderCardItem">
-        <item name="android:background">@color/circlebinder_app_card_item_background</item>
     </style>
 
 </resources>

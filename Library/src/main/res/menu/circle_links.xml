@@ -5,8 +5,8 @@
     >
 
     <item android:id="@+id/circlebinder_menu_circle_links"
-          android:title="@string/app_name"
-          android:orderInCategory="50"
+          android:title="@string/circlebinder_circle_homepage"
+          android:orderInCategory="150"
           android:icon="@drawable/ic_action_attachment"
           app:showAsAction="ifRoom"
         >

@@ -2,7 +2,6 @@ package circlebinder.common.app;
 
 import android.support.v4.app.FragmentManager;
 
-import circlebinder.common.R;
 import net.ichigotake.common.app.FragmentFactory;
 import net.ichigotake.common.app.FragmentTransit;
 import net.ichigotake.common.app.PaneTripper;
@@ -12,7 +11,7 @@ import net.ichigotake.common.app.PaneTripper;
  */
 public final class FragmentTripper implements PaneTripper {
 
-    private final int defaultLayoutId = R.id.activity_fragment_content;
+    private final int defaultLayoutId = android.R.id.content;
     private int layoutId;
     private String tag;
 

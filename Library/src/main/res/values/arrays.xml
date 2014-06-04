@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="filter_genre_key">
-        <item >0</item>
-        <item >1</item>
-        <item >2</item>
-        <item >3</item>
-    </string-array>
-
-    <string-array name="filter_genre_value">
-        <item >全日程</item>
-        <item >1日目</item>
-        <item >2日目</item>
-        <item >3日目</item>
-    </string-array>
-
-    <string-array name="circle_order_key">
-        <item >space</item>
-        <item >circle_name</item>
-        <item >pen_name</item>
-    </string-array>
-
     <string-array name="circle_order_value">
         <item >配置順</item>
         <item >サークル名順</item>
         <item >ペンネーム順</item>
-    </string-array>
-
-    <string-array name="circle_checked">
-        <item >@string/circlebinder_circlebinder_circle_check_uncheck</item>
-        <item >@string/circlebinder_circlebinder_circle_check_checked</item>
     </string-array>
 
 </resources>

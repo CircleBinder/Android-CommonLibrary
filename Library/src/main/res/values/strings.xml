@@ -1,36 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">CircleBinderApp</string>
-    <string name="circlebinder_title_activity_home">HomeActivity</string>
     <string name="circlebinder_action_search">Search</string>
-
     <string name="circlebinder_pref_app_storage">pref_app_storage</string>
     <string name="circlebinder_pref_app_storage_is_initialize">pref_app_storage_is_initialize</string>
 
-    <!-- 共通用語 -->
-    <string name="circlebinder_app_activity">アクティビティ</string>
-    <string name="circlebinder_app_favorite_more">お気に入りサークル更新情報 -&gt;</string>
-    <string name="circlebinder_app_favorite">お気に入り</string>
-
-    <!-- トップページ -->
-    <string name="circlebinder_home_change_log">更新履歴</string>
-
-    <!-- サークル検索 -->
-    <string name="circlebinder_app_circle_search_filter_by_checked">チェック済みを表示</string>
-    <string name="circlebinder_app_circle_search_hint">出展サークルを検索</string>
-    <string name="circlebinder_app_circle_search_option_accessibility">詳細な検索オプション</string>
-    <string name="circlebinder_circlebinder_circle_check_uncheck">未チェック</string>
-    <string name="circlebinder_circlebinder_circle_check_checked">チェック済み</string>
+    <string name="circlebinder_circle_homepage">ホームページ</string>
 
     <!-- その他・アプリ情報など(本筋の機能とは直接関係のないもの) -->
-    <string name="circlebinder_app_about">このアプリについて</string>
-    <string name="circlebinder_app_send_feedback">意見を送る</string>
-    <string name="circlebinder_app_open_source_license">オープンソースライセンス</string>
-    <string-array name="circlebinder_app_contact_emails">
+    <string name="circlebinder_navigation_change_log">更新履歴</string>
+    <string name="circlebinder_navigation_about">このアプリについて</string>
+    <string name="circlebinder_navigation_send_feedback">意見を送る</string>
+    <string name="circlebinder_navigation_open_source_license">オープンソースライセンス</string>
+    <string-array name="circlebinder_navigation_contact_mail_addresses">
         <item >circlebinder@gmail.com</item>
     </string-array>
-    <string name="circlebinder_app_contact_subject">【ご意見・ご要望】Comic1Binderに関して</string>
-    <string name="circlebinder_app_contact_text"></string>
+    <string name="circlebinder_contact_mail_subject">【ご意見・ご要望】ReitaisaiBinderに関して</string>
+    <string name="circlebinder_contact_mail_body"></string>
 
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="circlebinder_app_head_background">#ff993333</color>
+    <color name="circlebinder_app_head_text">#ffffff</color>
+    <color name="circlebinder_app_card_item_background">#ffffff</color>
+    <color name="circlebinder_app_card_container_background">#eeeeee</color>
+
+</resources>
