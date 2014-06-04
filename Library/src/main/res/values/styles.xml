@@ -39,7 +39,6 @@
         <item name="android:background">@color/circlebinder_app_card_item_background</item>
         <item name="android:clipToPadding">true</item>
         <item name="android:fadingEdge">none</item>
-        <item name="android:listSelector">@drawable/abc_list_selector_holo_light</item>
     </style>
 
     <style name="CircleBinderCardItem">
