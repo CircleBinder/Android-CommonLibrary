@@ -7,6 +7,8 @@
 
     <string name="circlebinder_circle_homepage">ホームページ</string>
 
+    <string name="circlebinder_common_all">全て</string>
+
     <!-- その他・アプリ情報など(本筋の機能とは直接関係のないもの) -->
     <string name="circlebinder_navigation_change_log">更新履歴</string>
     <string name="circlebinder_navigation_about">このアプリについて</string>

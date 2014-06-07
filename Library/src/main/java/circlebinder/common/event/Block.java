@@ -26,6 +26,11 @@ public class Block implements Parcelable {
         return name;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        return object instanceof Block && id == getId();
+    }
+
     public int describeContents() {
         return 0;
     }
