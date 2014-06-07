@@ -6,47 +6,45 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class CursorAdapter<I, T> extends android.support.v4.widget.CursorAdapter {
+public abstract class CursorAdapter<ITEM, TAG> extends android.support.v4.widget.CursorAdapter
+        implements ViewBinder<ITEM, TAG> {
 
-    public static interface CursorCreator<I> {
-
-        I create(Cursor cursor);
-    }
-
-    private final CursorAdapterParameter<I, T> parameter;
+    private final CursorItemConverter<ITEM> converter;
     private final LayoutInflater inflater;
 
-    public CursorAdapter(CursorAdapterParameter<I, T> parameter) {
-        super(parameter.getContext(), parameter.getCursor(), false);
-        this.inflater = LayoutInflater.from(parameter.getContext());
-        this.parameter = parameter;
-    }
-
-    protected CursorAdapterParameter<I, T> getParameter() {
-        return parameter;
+    public CursorAdapter(Context context, Cursor cursor, CursorItemConverter<ITEM> converter) {
+        super(context, cursor, false);
+        this.inflater = LayoutInflater.from(context);
+        this.converter = converter;
     }
 
     @Override
-    public I getItem(int position) {
+    public ITEM getItem(int position) {
         Cursor cursor = (Cursor)super.getItem(position);
-        return cursor != null ? parameter.getCursorCreator().create(cursor) : null;
+        return cursor != null ? converter.create(cursor) : null;
     }
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
         int position = cursor.getPosition();
-        I item = parameter.getCursorCreator().create(cursor);
-        View newView = parameter.getViewBinder().generateView(position, item, inflater, parent);
-        newView.setTag(parameter.getViewBinder().generateTag(position, item, newView));
+        ITEM item = converter.create(cursor);
+        View newView = generateView(position, item, inflater, parent);
+        newView.setTag(generateTag(position, item, newView));
         return newView;
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        T tag = (T)view.getTag();
-        I item = parameter.getCursorCreator().create(cursor);
+        TAG tag = (TAG)view.getTag();
+        ITEM item = converter.create(cursor);
         int position = cursor.getPosition();
-        parameter.getViewBinder().bindView(position, item, tag);
+        bindView(position, item, tag);
     }
+
+    abstract public View generateView(int position, ITEM item, LayoutInflater inflater, ViewGroup parent);
+
+    abstract public void bindView(int position, ITEM item, TAG tag);
+
+    abstract public TAG generateTag(int position, ITEM item, View convertView);
 
 }

@@ -5,14 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ArrayAdapter<I, T> extends android.widget.ArrayAdapter<I> {
+public abstract class ArrayAdapter<I, T> extends android.widget.ArrayAdapter<I> {
 
-    private final ViewBinder<I, T> binder;
     protected final LayoutInflater inflater;
 
-    public ArrayAdapter(Context context, ViewBinder<I, T> binder) {
+    public ArrayAdapter(Context context) {
         super(context, 0);
-        this.binder = binder;
         this.inflater = LayoutInflater.from(context);
     }
 
@@ -21,14 +19,14 @@ public class ArrayAdapter<I, T> extends android.widget.ArrayAdapter<I> {
         final T tag;
         final I item = getItem(position);
         if (convertView == null) {
-            convertView = binder.generateView(position, item, inflater, parent);
-            tag = binder.generateTag(position, item, convertView);
+            convertView = generateView(position, item, inflater, parent);
+            tag = generateTag(position, item, convertView);
             convertView.setTag(tag);
         } else {
             tag = (T)convertView.getTag();
         }
 
-        binder.bindView(position, item, tag);
+        bindView(position, item, tag);
 
         return convertView;
     }
@@ -39,16 +37,22 @@ public class ArrayAdapter<I, T> extends android.widget.ArrayAdapter<I> {
         final I item = getItem(position);
 
         if (convertView == null) {
-            convertView = binder.generateView(position, item, inflater, parent);
-            tag = binder.generateTag(position, item, convertView);
+            convertView = generateView(position, item, inflater, parent);
+            tag = generateTag(position, item, convertView);
             convertView.setTag(tag);
         } else {
             tag = (T)convertView.getTag();
         }
 
-        binder.bindView(position, item, tag);
+        bindView(position, item, tag);
 
         return convertView;
     }
+
+    abstract protected View generateView(int position, I item, LayoutInflater inflater, ViewGroup parent);
+
+    abstract protected void bindView(int position, I item, T tag);
+
+    abstract protected T generateTag(int position, I item, View convertView);
 
 }

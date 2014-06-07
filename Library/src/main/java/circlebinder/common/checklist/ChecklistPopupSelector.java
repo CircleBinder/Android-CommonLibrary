@@ -26,9 +26,7 @@ public final class ChecklistPopupSelector {
     }
 
     public void show() {
-        ChecklistSelectorAdapter adapter = new ChecklistSelectorAdapter(
-                context, new ChecklistSelectorBinder()
-        );
+        ChecklistSelectorAdapter adapter = new ChecklistSelectorAdapter(context);
         adapter.add(ChecklistColor.NONE);
         for (ChecklistColor item : ChecklistColor.checklists()) {
             adapter.add(item);

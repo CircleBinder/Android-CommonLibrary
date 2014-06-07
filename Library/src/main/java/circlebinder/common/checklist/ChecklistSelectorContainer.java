@@ -15,8 +15,7 @@ public final class ChecklistSelectorContainer {
                                       ChecklistColor selectedColor) {
         this.onItemSelectedListener = new OnItemSelectedListener<ChecklistColor>();
 
-        ChecklistSelectorBinder binder = new ChecklistSelectorBinder();
-        ChecklistSelectorAdapter adapter = new ChecklistSelectorAdapter(selector.getContext(), binder);
+        ChecklistSelectorAdapter adapter = new ChecklistSelectorAdapter(selector.getContext());
         adapter.clear();
 
         int position = 0;

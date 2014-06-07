@@ -1,15 +1,20 @@
-package circlebinder.common.event;
+package circlebinder.common.checklist;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import net.ichigotake.common.widget.ViewBinder;
+import net.ichigotake.common.widget.ArrayAdapter;
 
 import circlebinder.common.R;
-import circlebinder.common.checklist.SelectorViewHolder;
+import circlebinder.common.event.Block;
 
-public final class BlockSelectorBinder implements ViewBinder<Block, SelectorViewHolder> {
+public final class BlockSelectorAdapter extends ArrayAdapter<Block, SelectorViewHolder> {
+
+    public BlockSelectorAdapter(Context context) {
+        super(context);
+    }
 
     @Override
     public SelectorViewHolder generateTag(int position, Block item, View convertView) {
