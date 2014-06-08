@@ -1,6 +1,6 @@
 package circlebinder.common.search;
 
-public enum Comic1CircleOrder implements Order {
+public enum CircleOrder implements Order {
 
     CIRCLE_NAME_ASC(Sequence.ASC),
     CIRCLE_SPACE_ASC(Sequence.ASC),
@@ -9,7 +9,7 @@ public enum Comic1CircleOrder implements Order {
 
     private final Sequence sequence;
 
-    private Comic1CircleOrder(Sequence sequence) {
+    private CircleOrder(Sequence sequence) {
         this.sequence = sequence;
     }
 
@@ -18,9 +18,9 @@ public enum Comic1CircleOrder implements Order {
         return sequence;
     }
 
-    public static Comic1CircleOrder get(String value) {
-        Comic1CircleOrder got = DEFAULT;
-        for (Comic1CircleOrder order : values()) {
+    public static CircleOrder get(String value) {
+        CircleOrder got = DEFAULT;
+        for (CircleOrder order : values()) {
             if (order.name().equals(value)) {
                 got = order;
             }
