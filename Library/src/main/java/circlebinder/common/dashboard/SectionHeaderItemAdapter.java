@@ -8,13 +8,11 @@ import android.view.ViewGroup;
 import net.ichigotake.common.widget.SectionHeaderArrayAdapter;
 
 import circlebinder.common.R;
-import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
 
-public final class DashboardItemAdapter
-        extends SectionHeaderArrayAdapter<DashboardItem, DashboardItemViewHolder, DashboardHeaderViewHolder>
-        implements StickyListHeadersAdapter {
+public class SectionHeaderItemAdapter
+        extends SectionHeaderArrayAdapter<DashboardItem, DashboardItemViewHolder, DashboardHeaderViewHolder> {
 
-    public DashboardItemAdapter(Context context) {
+    public SectionHeaderItemAdapter(Context context) {
         super(context);
     }
 
