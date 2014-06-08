@@ -10,9 +10,11 @@ import circlebinder.common.R;
 public final class ContactTripper implements Tripper {
 
     private final Context context;
+    private final String appName;
 
-    public ContactTripper(Context context) {
+    public ContactTripper(Context context, String appName) {
         this.context = context;
+        this.appName = appName;
     }
 
     @Override
@@ -22,9 +24,10 @@ public final class ContactTripper implements Tripper {
                 Intent.EXTRA_EMAIL,
                 context.getResources().getStringArray(R.array.circlebinder_navigation_contact_mail_addresses)
         );
+
         intent.putExtra(
                 Intent.EXTRA_SUBJECT,
-                context.getString(R.string.circlebinder_contact_mail_subject)
+                context.getString(R.string.circlebinder_contact_mail_subject, appName)
         );
         intent.putExtra(
                 Intent.EXTRA_TEXT,

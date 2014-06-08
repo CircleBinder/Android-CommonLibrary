@@ -5,7 +5,7 @@
     >
 
     <item android:id="@+id/circlebinder_menu_circle_links"
-          android:title="@string/circlebinder_circle_homepage"
+          android:title="@string/circlebinder_circle_link"
           android:orderInCategory="150"
           android:icon="@drawable/ic_action_attachment"
           app:showAsAction="ifRoom"
@@ -14,14 +14,14 @@
         <menu>
 
             <item android:id="@+id/circlebinder_menu_circle_links_homepage"
-                  android:title="ホームページ"
+                  android:title="@string/circlebinder_circle_link_homepage"
                   android:orderInCategory="150"
                   android:icon="@drawable/ic_action_attachment"
                   android:visible="false"
                 />
 
             <item android:id="@+id/circlebinder_menu_circle_links_pixiv"
-                  android:title="pixiv"
+                  android:title="@string/circlebinder_circle_link_pixiv"
                   android:orderInCategory="150"
                   android:icon="@drawable/ic_action_attachment"
                   android:visible="false"
