@@ -4,9 +4,9 @@ import net.ichigotake.common.widget.OnItemSelectedEventListener;
 
 public final class OnItemSelectedSignalEventListener<T> implements OnItemSelectedEventListener<T> {
 
-    private final EventBus.Signal signal;
+    private final BusSignal signal;
 
-    public OnItemSelectedSignalEventListener(EventBus.Signal signal) {
+    public OnItemSelectedSignalEventListener(BusSignal signal) {
         this.signal = signal;
     }
 
