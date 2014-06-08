@@ -1,4 +1,4 @@
 package circlebinder.common.eventbus;
 
-public class ChecklistEmptyEvent {
+public final class ChecklistEmptyEvent {
 }

@@ -1,4 +1,4 @@
 package circlebinder.common.eventbus;
 
-public class CircleSearchUpdateEvent {
+public final class CircleSearchUpdateEvent {
 }

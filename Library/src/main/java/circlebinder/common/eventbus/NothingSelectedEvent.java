@@ -1,4 +1,4 @@
 package circlebinder.common.eventbus;
 
-public class NothingSelectedEvent {
+public final class NothingSelectedEvent {
 }
