@@ -7,10 +7,10 @@ import circlebinder.common.test.ParcelUtil;
 public final class BlockTest extends AndroidTestCase {
 
     public void testParcelable() {
-        Block expect = new Block.Builder()
+        Block expect = new BlockBuilder()
                 .setId(653115)
                 .setName("ブロック名")
-                .setArea(new Area.Builder().setName("area").build())
+                .setArea(new AreaBuilder().setName("area").build())
                 .build();
 
         try {

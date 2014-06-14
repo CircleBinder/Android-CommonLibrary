@@ -7,7 +7,7 @@ import circlebinder.common.test.ParcelUtil;
 public final class SpaceTest extends AndroidTestCase {
 
     public void testParcelable() {
-        Space expect = new Space.Builder()
+        Space expect = new SpaceBuilder()
                 .setName("桃")
                 .setSimpleName("P")
                 .setNo(33)

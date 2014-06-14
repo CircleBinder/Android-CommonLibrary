@@ -7,7 +7,7 @@ import circlebinder.common.test.ParcelUtil;
 public final class GenreTest extends AndroidTestCase {
 
     public void testParcel() {
-        Genre expect = new Genre.Builder()
+        Genre expect = new GenreBuilder()
                 .setId(653115)
                 .setName("ジャンル！")
                 .build();

@@ -8,9 +8,9 @@ import circlebinder.common.test.ParcelUtil;
 public final class FavoriteTest extends AndroidTestCase {
     
     public void testParcelable() {
-        Favorite expect = new Favorite.Builder()
+        Favorite expect = new FavoriteBuilder()
                 .setChecklistColor(ChecklistColor.LIGHT_BLUE)
-                .setCircle(new Circle.Builder().setName("サークル名").build())
+                .setCircle(new CircleBuilder().setName("サークル名").build())
                 .build();
 
         try {

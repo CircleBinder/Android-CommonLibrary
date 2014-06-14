@@ -7,7 +7,7 @@ import circlebinder.common.test.ParcelUtil;
 public final class EventDayTest extends AndroidTestCase {
 
     public void testParcelable() {
-        EventDay expect = new EventDay.Builder()
+        EventDay expect = new EventDayBuilder()
                 .setName("今日")
                 .build();
 

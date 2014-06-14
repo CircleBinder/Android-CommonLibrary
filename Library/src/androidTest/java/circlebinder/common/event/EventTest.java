@@ -7,10 +7,10 @@ import circlebinder.common.test.ParcelUtil;
 public final class EventTest extends AndroidTestCase {
 
     public void testParcelable() {
-        Event expect = new Event.Builder()
+        Event expect = new EventBuilder()
                 .setName("イベント名")
-                .setDay(new EventDay.Builder().setName("今日").build())
-                .setLocation(new Location.Builder().setDisplayName("場所").build())
+                .setDay(new EventDayBuilder().setName("今日").build())
+                .setLocation(new LocationBuilder().setDisplayName("場所").build())
                 .build();
 
         try {

@@ -7,7 +7,7 @@ import circlebinder.common.test.ParcelUtil;
 public final class AreaTest extends AndroidTestCase {
 
     public void testParcelable() {
-        Area expect = new Area.Builder()
+        Area expect = new AreaBuilder()
                 .setName("Name!")
                 .setSimpleName("SimpleName!")
                 .build();

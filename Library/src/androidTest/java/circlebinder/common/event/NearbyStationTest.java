@@ -7,7 +7,7 @@ import circlebinder.common.test.ParcelUtil;
 public final class NearbyStationTest extends AndroidTestCase {
 
     public void testParcelable() {
-        NearbyStation expect = new NearbyStation.Builder()
+        NearbyStation expect = new NearbyStationBuilder()
                 .setDisplay("最寄り駅")
                 .build();
 

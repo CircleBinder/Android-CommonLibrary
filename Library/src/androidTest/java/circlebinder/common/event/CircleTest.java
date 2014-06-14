@@ -9,14 +9,14 @@ import circlebinder.common.test.ParcelUtil;
 public final class CircleTest extends AndroidTestCase {
 
     public void testParcel() {
-        Circle expect = new Circle.Builder()
+        Circle expect = new CircleBuilder()
                 .setId(653115)
                 .setName("銀河ドリーム")
                 .setPenName("銀河宇宙人")
                 .setChecklistColor(ChecklistColor.GREEN)
-                .setGenre(new Genre.Builder().setName("銀河ジャンル").build())
-                .setSpace(new Space.Builder().setName("銀河スペース").build())
-                .addLink(new CircleLink.Builder().setUri(Uri.parse("http://my.homepage.com")).build())
+                .setGenre(new GenreBuilder().setName("銀河ジャンル").build())
+                .setSpace(new SpaceBuilder().setName("銀河スペース").build())
+                .addLink(new CircleLinkBuilder().setUri(Uri.parse("http://my.homepage.com")).build())
                 .build();
 
         try {

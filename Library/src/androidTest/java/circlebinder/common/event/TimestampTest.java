@@ -7,7 +7,7 @@ import circlebinder.common.test.ParcelUtil;
 public final class TimestampTest extends AndroidTestCase {
 
     public void testParcelable() {
-        Timestamp expect = new Timestamp.Builder()
+        Timestamp expect = new TimestampBuilder()
                 .setDisplayName("2000-11-18")
                 .setTimestamp(653115)
                 .build();

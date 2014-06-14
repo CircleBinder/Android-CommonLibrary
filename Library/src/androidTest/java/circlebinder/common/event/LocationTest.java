@@ -7,7 +7,7 @@ import circlebinder.common.test.ParcelUtil;
 public final class LocationTest extends AndroidTestCase {
 
     public void testParcelable() {
-        Location expect = new Location.Builder()
+        Location expect = new LocationBuilder()
                 .setDisplayName("大田区")
                 .setLink("scheme://i-am/location/scheme!")
                 .build();
