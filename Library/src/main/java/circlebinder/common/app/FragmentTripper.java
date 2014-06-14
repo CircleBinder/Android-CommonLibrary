@@ -11,7 +11,6 @@ import net.ichigotake.common.app.PaneTripper;
  */
 public final class FragmentTripper implements PaneTripper {
 
-    private final int defaultLayoutId = android.R.id.content;
     private int layoutId;
     private String tag;
 
@@ -46,7 +45,7 @@ public final class FragmentTripper implements PaneTripper {
 
     @Override
     public void trip() {
-        int replaceLayoutId = (layoutId != 0) ? layoutId : defaultLayoutId;
+        int replaceLayoutId = (layoutId != 0) ? layoutId : android.R.id.content;
         new FragmentTransit(fragmentManager)
                 .setAddBackStack(addBackStack)
                 .setNextFragment(replaceLayoutId, factory.create())
