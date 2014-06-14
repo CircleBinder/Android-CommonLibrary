@@ -48,5 +48,8 @@ public final class CircleWebContainer {
 
     public void onDestroy() {
         webView.getSettings().setBuiltInZoomControls(false);
+        //ほんとは最大サイズを指定して制御したいが、キャッシュの最大サイズを指定するAPIが見つからない
+        //何もしないでディスク容量が膨れ上がるよりは、たとえキャッシュの恩恵が受けられなくても控えめなアプリでいたい
+        webView.clearCache(true);
     }
 }
