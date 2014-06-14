@@ -4,6 +4,7 @@ public enum CircleOrder implements Order {
 
     CIRCLE_NAME_ASC(Sequence.ASC),
     CIRCLE_SPACE_ASC(Sequence.ASC),
+    CHECKLIST(Sequence.ASC),
     DEFAULT(Sequence.ASC),
     ;
 
