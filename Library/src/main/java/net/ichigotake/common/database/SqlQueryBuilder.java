@@ -55,7 +55,7 @@ public final class SqlQueryBuilder {
         }
 
         public Object[] getArguments() {
-            return values.toArray();
+            return values.toArray(new String[values.size()]);
         }
 
         @Override
