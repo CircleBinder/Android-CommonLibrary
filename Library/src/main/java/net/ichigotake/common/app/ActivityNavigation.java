@@ -13,7 +13,7 @@ public final class ActivityNavigation {
         return activity != null && activity.getSupportParentActivityIntent() != null;
     }
 
-    public static boolean onOptionsItemSelected(Activity currentActivity, MenuItem item) {
+    public static boolean back(Activity currentActivity, MenuItem item) {
         if (item.getItemId() != android.R.id.home) {
             return false;
         }
