@@ -13,6 +13,5 @@ buildscript {
 allprojects {
     repositories {
         mavenCentral()
-        maven { url 'https://raw.github.com/ichigotake/colorpicker/migrate-to-gradle/repository' }
     }
 }

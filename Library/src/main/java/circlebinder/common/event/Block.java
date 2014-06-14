@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Block implements Parcelable {
-    private final int id;
+    private final long id;
     private final Area area;
     private final String name;
 
@@ -14,7 +14,7 @@ public class Block implements Parcelable {
         name = builder.name;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -37,13 +37,13 @@ public class Block implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.id);
+        dest.writeLong(this.id);
         dest.writeParcelable(this.area, 0);
         dest.writeString(this.name);
     }
 
     private Block(Parcel in) {
-        this.id = in.readInt();
+        this.id = in.readLong();
         this.area = in.readParcelable(Area.class.getClassLoader());
         this.name = in.readString();
     }

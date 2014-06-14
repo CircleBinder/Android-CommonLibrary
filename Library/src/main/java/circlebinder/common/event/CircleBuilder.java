@@ -10,7 +10,7 @@ import circlebinder.common.checklist.ChecklistColor;
 
 public final class CircleBuilder implements Parcelable {
 
-    int id;
+    long id;
     Space space;
     Genre genre;
     ChecklistColor checklistColor;
@@ -85,7 +85,7 @@ public final class CircleBuilder implements Parcelable {
         return this;
     }
 
-    public CircleBuilder setId(int id) {
+    public CircleBuilder setId(long id) {
         this.id = id;
         return this;
     }
@@ -118,7 +118,7 @@ public final class CircleBuilder implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.id);
+        dest.writeLong(this.id);
         dest.writeParcelable(this.space, 0);
         dest.writeParcelable(this.genre, 0);
         dest.writeInt(this.checklistColor == null ? -1 : this.checklistColor.ordinal());
@@ -129,7 +129,7 @@ public final class CircleBuilder implements Parcelable {
     }
 
     private CircleBuilder(Parcel in) {
-        this.id = in.readInt();
+        this.id = in.readLong();
         this.space = in.readParcelable(Space.class.getClassLoader());
         this.genre = in.readParcelable(Genre.class.getClassLoader());
         int tmpChecklistColor = in.readInt();

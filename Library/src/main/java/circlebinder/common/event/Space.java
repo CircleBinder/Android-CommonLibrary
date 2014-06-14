@@ -7,6 +7,7 @@ public class Space implements Parcelable {
 
     private final String name;
     private final String simpleName;
+    private final long blockId;
     private final String blockName;
     private final int spaceNo;
     private final String spaceNoSub;
@@ -14,6 +15,7 @@ public class Space implements Parcelable {
     Space(SpaceBuilder builder) {
         name = builder.name;
         simpleName = builder.simpleName;
+        blockId = builder.blockId;
         blockName = builder.blockName;
         spaceNo = builder.spaceNo;
         spaceNoSub = builder.spaceNoSub;
@@ -39,6 +41,10 @@ public class Space implements Parcelable {
         return spaceNoSub;
     }
 
+    public long getBlockId() {
+        return blockId;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -48,6 +54,7 @@ public class Space implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
         dest.writeString(this.simpleName);
+        dest.writeLong(this.blockId);
         dest.writeString(this.blockName);
         dest.writeInt(this.spaceNo);
         dest.writeString(this.spaceNoSub);
@@ -56,12 +63,13 @@ public class Space implements Parcelable {
     private Space(Parcel in) {
         this.name = in.readString();
         this.simpleName = in.readString();
+        this.blockId = in.readLong();
         this.blockName = in.readString();
         this.spaceNo = in.readInt();
         this.spaceNoSub = in.readString();
     }
 
-    public static Parcelable.Creator<Space> CREATOR = new Parcelable.Creator<Space>() {
+    public static Creator<Space> CREATOR = new Creator<Space>() {
         public Space createFromParcel(Parcel source) {
             return new Space(source);
         }

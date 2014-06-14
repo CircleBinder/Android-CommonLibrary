@@ -7,6 +7,7 @@ public final class SpaceBuilder implements Parcelable {
 
     String name;
     String simpleName;
+    long blockId;
     String blockName;
     int spaceNo;
     String spaceNoSub;
@@ -37,6 +38,11 @@ public final class SpaceBuilder implements Parcelable {
 
     public SpaceBuilder setNoSub(String noSub) {
         this.spaceNoSub = noSub;
+        return this;
+    }
+
+    public SpaceBuilder setBlockId(long blockId) {
+        this.blockId = blockId;
         return this;
     }
 

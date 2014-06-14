@@ -34,7 +34,7 @@ public final class BlockSelectorContainer {
         if (block == null) {
             position = 0;
         } else if (block.getId() > 0) {
-            position = block.getId();
+            position = (int)block.getId();
         } else {
             position = 1;
         }
