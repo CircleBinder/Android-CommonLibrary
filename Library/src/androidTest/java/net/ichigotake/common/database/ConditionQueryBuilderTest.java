@@ -29,7 +29,7 @@ public final class ConditionQueryBuilderTest extends AndroidTestCase {
         assertEquals(argument, builder.getArguments()[0]);
     }
 
-    public void testAndで複数指定する() {
+    public void test条件式を複数指定する() {
         ConditionQueryBuilder builder = new ConditionQueryBuilder();
         String idCondition = "id = ?";
         int idArgument = 1;
