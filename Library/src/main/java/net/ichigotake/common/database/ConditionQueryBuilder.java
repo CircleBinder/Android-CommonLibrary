@@ -10,6 +10,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class ConditionQueryBuilder {
 
     private final String LOGICAL_OPERATOR_AND = "AND";
+    private final String LOGICAL_OPERATOR_OR = "OR";
     private final List<String> conditions;
     private final List<Object> values;
     private final List<String> logicalOperators;
@@ -23,6 +24,15 @@ public final class ConditionQueryBuilder {
     public ConditionQueryBuilder and(String condition, Object... arguments) {
         if (conditions.size() > 0) {
             logicalOperators.add(LOGICAL_OPERATOR_AND);
+        }
+        conditions.add(condition);
+        values.addAll(Arrays.asList(arguments));
+        return this;
+    }
+
+    public ConditionQueryBuilder or(String condition, Object... arguments) {
+        if (conditions.size() > 0) {
+            logicalOperators.add(LOGICAL_OPERATOR_OR);
         }
         conditions.add(condition);
         values.addAll(Arrays.asList(arguments));

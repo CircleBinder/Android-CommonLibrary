@@ -37,10 +37,17 @@ public final class ConditionQueryBuilderTest extends AndroidTestCase {
         String nameCondition = "name like ?";
         String nameArgument = "%taro%";
         builder.and(nameCondition, nameArgument);
+        String ageCondition = "age = ?";
+        String ageArgument = "17";
+        builder.or(ageCondition, ageArgument);
 
-        assertEquals("(" + idCondition + ") AND (" + nameCondition + ")", builder.getQuery());
+        String expectedQuery = "(" + idCondition + ")" +
+                " AND (" + nameCondition + ")" +
+                " OR (" + ageCondition + ")";
+        assertEquals(expectedQuery, builder.getQuery());
         assertEquals(idArgument, builder.getArguments()[0]);
         assertEquals(nameArgument, builder.getArguments()[1]);
+        assertEquals(ageArgument, builder.getArguments()[2]);
     }
 
 }
