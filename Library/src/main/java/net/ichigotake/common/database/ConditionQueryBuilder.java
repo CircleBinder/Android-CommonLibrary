@@ -30,6 +30,10 @@ public final class ConditionQueryBuilder {
         return this;
     }
 
+    public ConditionQueryBuilder and(ConditionQueryBuilder builder) {
+        return and(builder.getQuery(), builder.getArguments());
+    }
+
     public ConditionQueryBuilder or(String condition, Object... arguments) {
         if (conditions.size() > 0) {
             logicalOperators.add(LOGICAL_OPERATOR_OR);
@@ -37,6 +41,10 @@ public final class ConditionQueryBuilder {
         conditions.add(condition);
         values.addAll(Arrays.asList(arguments));
         return this;
+    }
+
+    public ConditionQueryBuilder or(ConditionQueryBuilder builder) {
+        return or(builder.getQuery(), getArguments());
     }
 
     public String getQuery() {

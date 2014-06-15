@@ -50,4 +50,26 @@ public final class ConditionQueryBuilderTest extends AndroidTestCase {
         assertEquals(ageArgument, builder.getArguments()[2]);
     }
 
+    public void test条件式を入れ子で指定する() {
+        ConditionQueryBuilder builder = new ConditionQueryBuilder();
+        String idCondition = "id = ?";
+        ConditionQueryBuilder nestedQueryBuilder = new ConditionQueryBuilder();
+        int idArgument = 1;
+        builder.and(idCondition, idArgument);
+        String nameCondition = "name like ?";
+        String nameArgument = "%taro%";
+        nestedQueryBuilder.and(nameCondition, nameArgument);
+        String ageCondition = "age = ?";
+        String ageArgument = "17";
+        nestedQueryBuilder.or(ageCondition, ageArgument);
+        builder.and(nestedQueryBuilder);
+
+        String expectedQuery = "(" + idCondition + ")" +
+                " AND ((" + nameCondition + ") OR (" + ageCondition + "))";
+        assertEquals(expectedQuery, builder.getQuery());
+        assertEquals(idArgument, builder.getArguments()[0]);
+        assertEquals(nameArgument, builder.getArguments()[1]);
+        assertEquals(ageArgument, builder.getArguments()[2]);
+    }
+
 }
