@@ -84,4 +84,19 @@ public final class ConditionQueryBuilderTest extends AndroidTestCase {
         assertFalse(builder.isEmpty());
     }
 
+    public void testDslLikeCall() {
+        String idCondition = "id = ?";
+        int idArgument = 1;
+        String nameCondition = "name = ?";
+        String nameArgument = "taro";
+        ConditionQueryBuilder builder = ConditionQueryBuilder
+                .where(idCondition, idArgument)
+                .and(nameCondition, nameArgument);
+
+        String expectedQuery = "(" + idCondition + ") AND (" + nameCondition + ")";
+        assertEquals(expectedQuery, builder.getQuery());
+        assertEquals(idArgument, builder.getArguments()[0]);
+        assertEquals(nameArgument, builder.getArguments()[1]);
+    }
+
 }

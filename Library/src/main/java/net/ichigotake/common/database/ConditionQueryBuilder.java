@@ -9,6 +9,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public final class ConditionQueryBuilder {
 
+    public static ConditionQueryBuilder where(String condition, Object... arguments) {
+        return new ConditionQueryBuilder().and(condition, arguments);
+    }
+
     private final String LOGICAL_OPERATOR_AND = "AND";
     private final String LOGICAL_OPERATOR_OR = "OR";
     private final List<String> conditions;
