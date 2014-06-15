@@ -72,4 +72,16 @@ public final class ConditionQueryBuilderTest extends AndroidTestCase {
         assertEquals(ageArgument, builder.getArguments()[2]);
     }
 
+    public void testIsEmpty() {
+        ConditionQueryBuilder builder = new ConditionQueryBuilder();
+
+        assertTrue(builder.isEmpty());
+
+        String condition = "id = ?";
+        int argument = 1;
+        builder.and(condition, argument);
+
+        assertFalse(builder.isEmpty());
+    }
+
 }

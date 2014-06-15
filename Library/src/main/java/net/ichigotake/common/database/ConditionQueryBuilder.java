@@ -47,6 +47,10 @@ public final class ConditionQueryBuilder {
         return or(builder.getQuery(), getArguments());
     }
 
+    public boolean isEmpty() {
+        return conditions.isEmpty();
+    }
+
     public String getQuery() {
         if (conditions.isEmpty()) {
             return "";
