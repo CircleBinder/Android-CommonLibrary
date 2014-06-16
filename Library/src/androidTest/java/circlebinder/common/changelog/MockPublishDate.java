@@ -1,4 +1,4 @@
-package circlebinder.common.dashboard;
+package circlebinder.common.changelog;
 
 final class MockPublishDate {
 
