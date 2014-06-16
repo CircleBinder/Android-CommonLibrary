@@ -1,17 +1,25 @@
-package circlebinder.common.dashboard;
+package circlebinder.common.changelog;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.format.DateFormat;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public final class PublishDate implements FeedDate, Parcelable {
 
     public final static class Builder {
         //TODO: デフォルトのフォーマットを考えておく
         private long timestampMillSeconds;
-        private String formattedDate;
+        private String format;
 
         public PublishDate build() {
-            return new PublishDate(this);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(timestampMillSeconds);
+            SimpleDateFormat.getDateInstance().setCalendar(calendar);
+            String formattedDate = DateFormat.format(format, calendar).toString();
+            return new PublishDate(timestampMillSeconds, formattedDate);
         }
 
         public Builder setTimestamp(long millSeconds) {
@@ -19,8 +27,8 @@ public final class PublishDate implements FeedDate, Parcelable {
             return this;
         }
 
-        public Builder setFormattedDate(String formattedDate) {
-            this.formattedDate = formattedDate;
+        public Builder setFormattedDate(String format) {
+            this.format = format;
             return this;
         }
     }
@@ -28,9 +36,9 @@ public final class PublishDate implements FeedDate, Parcelable {
     private final long timestampMillSeconds;
     private final String formattedDate;
 
-    private PublishDate(Builder builder) {
-        this.timestampMillSeconds = builder.timestampMillSeconds;
-        this.formattedDate = builder.formattedDate;
+    private PublishDate(long timestampMillSeconds, String formattedDate) {
+        this.timestampMillSeconds = timestampMillSeconds;
+        this.formattedDate = formattedDate;
     }
 
     @Override

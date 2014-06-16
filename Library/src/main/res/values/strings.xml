@@ -24,6 +24,7 @@
     <string-array name="circlebinder_navigation_contact_mail_addresses">
         <item >circlebinder@gmail.com</item>
     </string-array>
+    <string name="circlebinder_change_log_publish_date_format">%1$s バージョン%2$s</string>
     <string name="circlebinder_contact_mail_subject">【ご意見・ご要望】%sに関して</string>
     <string name="circlebinder_contact_mail_body"></string>
 
