@@ -20,7 +20,7 @@ public final class CircleSearchOptionBuilder implements Parcelable {
     }
 
     public CircleSearchOptionBuilder(CircleSearchOption searchOption) {
-        keyword = searchOption.getKeyword().toString();
+        keyword = searchOption.getKeyword();
         order = searchOption.getOrder();
         block = searchOption.getBlock();
         checklistColor = searchOption.getChecklist();
@@ -28,6 +28,14 @@ public final class CircleSearchOptionBuilder implements Parcelable {
 
     public CircleSearchOption build() {
         return new CircleSearchOption(this);
+    }
+
+    public CircleSearchOptionBuilder set(CircleSearchOption searchOption) {
+        keyword = searchOption.getKeyword();
+        order = searchOption.getOrder();
+        block = searchOption.getBlock();
+        checklistColor = searchOption.getChecklist();
+        return this;
     }
 
     public CircleSearchOptionBuilder setKeyword(String keyword) {

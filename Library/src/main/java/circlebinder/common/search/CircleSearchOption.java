@@ -27,7 +27,7 @@ public class CircleSearchOption implements Parcelable {
         return keyword != null;
     }
 
-    public CharSequence getKeyword() {
+    public String getKeyword() {
         return keyword;
     }
 
