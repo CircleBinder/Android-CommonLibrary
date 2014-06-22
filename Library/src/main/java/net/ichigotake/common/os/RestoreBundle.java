@@ -79,4 +79,8 @@ public final class RestoreBundle {
     public String getString(String key) {
         return bundle.getString(key);
     }
+
+    public Bundle getBundle() {
+        return bundle;
+    }
 }
