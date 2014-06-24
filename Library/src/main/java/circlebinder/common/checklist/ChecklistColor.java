@@ -57,28 +57,6 @@ public enum ChecklistColor implements Legacy {
         return values()[ordinal];
     }
 
-    public static int[] colors() {
-        ChecklistColor[] values = values();
-        int[] colors = new int[values.length-1];
-        for (ChecklistColor color : values) {
-            if (color.getId() > 0) {
-                colors[color.getId()-1] = color.getColor();
-            }
-        }
-        colors[colors.length-1] = NONE.getColor();
-        return colors;
-    }
-
-    public static ChecklistColor getByColor(int color) {
-        ChecklistColor value = NONE;
-        for (ChecklistColor item : values()) {
-            if (item.getColor() == color) {
-                value = item;
-            }
-        }
-        return value;
-    }
-
     public static ChecklistColor getById(int id) {
         for (ChecklistColor color : values()) {
             if (id == color.getId()) {
