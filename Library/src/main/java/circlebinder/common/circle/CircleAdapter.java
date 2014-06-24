@@ -27,7 +27,7 @@ public final class CircleAdapter extends CursorAdapter<Circle, CircleViewHolder>
 
     @Override
     public View generateView(int position, Circle item, LayoutInflater inflater, ViewGroup parent) {
-        return inflater.inflate(R.layout.circlebinder_circle_list_item, null);
+        return inflater.inflate(R.layout.circlebinder_circle_list_item, parent, false);
     }
 
     @Override

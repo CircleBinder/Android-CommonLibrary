@@ -27,14 +27,13 @@ public final class ChecklistPopupSelector {
 
     public void show() {
         ChecklistSelectorAdapter adapter = new ChecklistSelectorAdapter(context);
-        adapter.add(ChecklistColor.NONE);
+        adapter.add(ChecklistColor.ALL);
         for (ChecklistColor item : ChecklistColor.checklists()) {
             adapter.add(item);
         }
         popupWindow.setAdapter(adapter);
         popupWindow.setAnchorView(anchor);
         popupWindow.setOnItemClickListener(listener);
-        popupWindow.setModal(true);
         //TODO: 決め打ちやめたい
         popupWindow.setWidth(800);
         popupWindow.show();
