@@ -6,4 +6,16 @@
     <color name="circlebinder_app_card_item_background">#ffffff</color>
     <color name="circlebinder_app_card_container_background">#eeeeee</color>
 
+    <color name="circlebinder_icon_border">#666666</color>
+    <color name="circlebinder_checklist_none">#ffffffff</color>
+    <color name="circlebinder_checklist_light_blue">#00B5FF</color>
+    <color name="circlebinder_checklist_light_green">#00FF00</color>
+    <color name="circlebinder_checklist_orange">#FF944A</color>
+    <color name="circlebinder_checklist_pink">#FF00FF</color>
+    <color name="circlebinder_checklist_purple">#9C529C</color>
+    <color name="circlebinder_checklist_red">#FF0000</color>
+    <color name="circlebinder_checklist_yellow">#FFF700</color>
+    <color name="circlebinder_checklist_green">#00B54A</color>
+    <color name="circlebinder_checklist_blue">#0000FF</color>
+
 </resources>

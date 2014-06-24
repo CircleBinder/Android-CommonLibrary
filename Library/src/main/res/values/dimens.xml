@@ -6,5 +6,6 @@
     <dimen name="circlebinder_spacer_small">8dp</dimen>
     <dimen name="circlebinder_spacer_middle">16dp</dimen>
     <dimen name="circlebinder_spacer_large">24dp</dimen>
+    <dimen name="circlebinder_icon_border">1dp</dimen>
 
 </resources>

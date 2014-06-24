@@ -1,7 +1,6 @@
 package circlebinder.common.checklist;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +28,7 @@ final class ChecklistSelectorAdapter extends ArrayAdapter<ChecklistColor, Select
     @Override
     public void bindView(int position, ChecklistColor item, SelectorViewHolder tag) {
         tag.getName().setText(item.getName());
-        tag.getIcon().setImageDrawable(new ColorDrawable(item.getColor()));
+        tag.getIcon().setImageResource(item.getColorDrawable());
     }
 
 }
