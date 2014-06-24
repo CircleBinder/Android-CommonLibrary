@@ -43,4 +43,8 @@ public final class ChecklistPopupSelector {
     public void dismiss() {
         popupWindow.dismiss();
     }
+
+    public boolean isShowing() {
+        return popupWindow.isShowing();
+    }
 }
