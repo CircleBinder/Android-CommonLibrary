@@ -4,12 +4,12 @@ import android.support.v4.app.FragmentManager;
 
 import net.ichigotake.common.app.FragmentFactory;
 import net.ichigotake.common.app.FragmentTransit;
-import net.ichigotake.common.app.PaneTripper;
+import net.ichigotake.common.app.Tripper;
 
 /**
  * フラグメント遷移をする
  */
-public final class FragmentTripper implements PaneTripper {
+public final class FragmentTripper implements Tripper {
 
     private int layoutId;
     private String tag;
