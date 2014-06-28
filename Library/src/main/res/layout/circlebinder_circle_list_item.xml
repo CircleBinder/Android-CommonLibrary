@@ -5,76 +5,61 @@
     style="@style/CircleBinderCardItem"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
+    android:layout_height="56dp"
     >
 
-    <TextView
-        android:id="@+id/checklist_item_space"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:background="#aaaaaa"
-        android:padding="4dp"
-        android:text="あ\n01a"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        />
-
     <RelativeLayout
-        android:layout_toRightOf="@+id/checklist_item_space"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/circlebinder_material_list_key_line_container_padding_horizontal"
+        android:paddingTop="@dimen/circlebinder_spacer_small"
+        android:paddingBottom="@dimen/circlebinder_spacer_small"
         >
 
-        <circlebinder.common.view.CircleCutView
-            style="@style/CircleBinderCircleCutView"
-            android:id="@+id/checklist_item_circle_cut"
-            android:layout_centerVertical="true"
+        <TextView
+            android:id="@+id/checklist_item_space"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="あ01a"
+            android:textSize="@dimen/circlebinder_material_font_button"
             />
 
-        <RelativeLayout
-            android:layout_toRightOf="@+id/checklist_item_circle_cut"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="4dp"
-            >
-
-            <!-- TODO: OSでフォントサイズを大きくした場合の考慮 -->
-
-            <TextView
-                android:id="@+id/checklist_item_genre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lineSpacingMultiplier="1.2"
-                android:textSize="12sp"
-                android:text="創作"
-                android:visibility="gone"
-                />
-
-            <TextView
-                style="@style/CircleBinderCircleListItemCircleName"
-                android:id="@+id/checklist_item_circle_name"
-                android:text="NECOTOXIXIN"
-                android:layout_alignParentTop="true"
-                android:layout_below="@+id/checklist_item_genre"
-                android:lineSpacingMultiplier="1.2"
-                android:textSize="14sp"
-                />
-
-            <TextView
-                android:id="@+id/checklist_item_pen_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/checklist_item_circle_name"
-                android:lineSpacingMultiplier="1.2"
-                android:text="・最新の画像動画"
-                android:textSize="12sp"
-                />
-
-        </RelativeLayout>
-
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/circlebinder_material_list_key_line_label_padding_horizontal"
+        android:layout_marginRight="@dimen/circlebinder_material_list_key_line_label_padding_horizontal"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:id="@+id/checklist_item_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/circlebinder_material_font_subhead"
+            android:text="創作"
+            android:visibility="gone"
+            />
+
+        <TextView
+            style="@style/CircleBinderCircleListItemCircleName"
+            android:id="@+id/checklist_item_circle_name"
+            android:text="CircleBinder"
+            android:textSize="@dimen/circlebinder_material_font_subhead"
+            />
+
+        <TextView
+            android:id="@+id/checklist_item_pen_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\@ichigotake"
+            android:textSize="@dimen/circlebinder_material_font_body"
+            />
+
+    </LinearLayout>
 
 </RelativeLayout>
