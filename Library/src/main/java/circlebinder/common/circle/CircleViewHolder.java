@@ -4,12 +4,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import circlebinder.common.R;
-import circlebinder.common.view.CircleCutView;
 
 public final class CircleViewHolder {
 
     private final View container;
-    private final CircleCutView circleCut;
 
     private final TextView circleName;
     private final TextView penName;
@@ -18,7 +16,6 @@ public final class CircleViewHolder {
 
     public CircleViewHolder(View container) {
         this.container = container;
-        this.circleCut = (CircleCutView)container.findViewById(R.id.checklist_item_circle_cut);
         this.circleName = (TextView)container.findViewById(R.id.checklist_item_circle_name);
         this.penName = (TextView)container.findViewById(R.id.checklist_item_pen_name);
         this.genre = (TextView)container.findViewById(R.id.checklist_item_genre);
@@ -27,10 +24,6 @@ public final class CircleViewHolder {
 
     public View getContainer() {
         return container;
-    }
-
-    public CircleCutView getCircleCut() {
-        return circleCut;
     }
 
     public TextView getCircleName() {

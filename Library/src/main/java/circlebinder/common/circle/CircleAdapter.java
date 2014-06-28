@@ -32,15 +32,17 @@ public final class CircleAdapter extends CursorAdapter<Circle, CircleViewHolder>
 
     @Override
     public void bindView(int position, Circle item, CircleViewHolder tag) {
-        int backgroundColor = item.getChecklistColor().getColor() + 0xcc000000;
-
-        tag.getSpace().setBackgroundColor(backgroundColor);
         tag.getCircleName().setText(item.getName());
         tag.getPenName().setText(item.getPenName());
 
-        tag.getCircleCut().setVisibility(View.GONE);
+        tag.getSpace().setCompoundDrawablesWithIntrinsicBounds(
+                0,
+                item.getChecklistColor().getColorDrawable(),
+                0,
+                0
+        );
         tag.getSpace().setText(
-                String.format("%s\n%02d%s",
+                String.format("%s%02d%s",
                         item.getSpace().getBlockName(), item.getSpace().getNo(), item.getSpace().getNoSub())
         );
         tag.getGenre().setText(item.getGenre().getName());

@@ -1,7 +1,5 @@
 package circlebinder.common.checklist;
 
-import android.graphics.Color;
-
 import circlebinder.Legacy;
 import circlebinder.common.R;
 
@@ -23,13 +21,11 @@ public enum ChecklistColor implements Legacy {
     final private int mId;
     final private int mColorDrawable;
     final private String mName;
-    final private int mColor;
 
     private ChecklistColor(int id, int colorDrawable, String name, String colorCode) {
         mId = id;
         this.mColorDrawable = colorDrawable;
         mName = name;
-        mColor = Color.parseColor(colorCode);
     }
 
     public int getId() {
@@ -38,10 +34,6 @@ public enum ChecklistColor implements Legacy {
 
     public String getName() {
         return mName;
-    }
-
-    public int getColor() {
-        return mColor;
     }
 
     public int getColorDrawable() {

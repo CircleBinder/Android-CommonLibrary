@@ -10,11 +10,9 @@
         android:id="@+id/circlebinder_dashboard_item_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="40dp"
-        android:paddingTop="8dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="8dp"
-        android:paddingLeft="16dp"
+        android:minHeight="@dimen/circlebinder_material_list_item_height"
+        android:paddingRight="@dimen/circlebinder_material_list_key_line_container_padding_horizontal"
+        android:paddingLeft="@dimen/circlebinder_material_list_key_line_container_padding_horizontal"
         android:gravity="center_vertical"
         />
 
