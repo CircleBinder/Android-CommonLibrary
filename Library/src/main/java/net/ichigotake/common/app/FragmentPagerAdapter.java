@@ -25,8 +25,15 @@ public class FragmentPagerAdapter extends FragmentStatePagerAdapter {
 
     public void reload(int position) {
         Object page = registeredPages.get(position);
-        if (page != null && page instanceof Pane) {
-            ((Pane)page).tap();
+        if (page != null && page instanceof OnPageChangeListener) {
+            ((OnPageChangeListener)page).active();
+        }
+    }
+
+    public void callOnInactive(int position) {
+        Object page = registeredPages.get(position);
+        if (page != null && page instanceof OnPageChangeListener) {
+            ((OnPageChangeListener)page).inactive();
         }
     }
 

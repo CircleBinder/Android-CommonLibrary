@@ -8,7 +8,7 @@ import android.util.Log;
 /**
  * アクティビティの遷移をする
  */
-public class ActivityTripper implements PaneTripper {
+public class ActivityTripper implements Tripper {
 
     private final String LOG_TAG = ActivityTripper.class.getSimpleName();
     private final Context context;

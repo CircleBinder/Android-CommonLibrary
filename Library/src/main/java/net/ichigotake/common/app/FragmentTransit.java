@@ -10,7 +10,7 @@ import android.support.v7.app.ActionBarActivity;
 
 import circlebinder.common.R;
 
-public final class FragmentTransit implements PaneTripper {
+public final class FragmentTransit implements Tripper {
 
     final private FragmentManager mFragmentManager;
     
