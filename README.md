@@ -3,6 +3,13 @@ CircleBinder
 
 Common library for CircleBinder applications.
 
+
+DEVELOP ENVIRONMENT
+------------
+
+- AndroidStudio v0.8.+
+
+
 LICENSE
 ------------
 

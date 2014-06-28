@@ -1,5 +1,5 @@
 project.ext {
-    androidBuildToolsVersion = "19.1.0"
+    androidBuildToolsVersion = "20.0.0"
     androidSdkVersion = 19
 }
 
