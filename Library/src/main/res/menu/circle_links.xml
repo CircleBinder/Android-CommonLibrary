@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/circlebinder_menu_circle_links"
-          android:title="@string/circlebinder_circle_link"
-          android:orderInCategory="150"
-          android:icon="@drawable/ic_action_attachment"
-          app:showAsAction="ifRoom"
+    <item
+        android:id="@+id/circlebinder_menu_circle_links"
+        android:title="@string/circlebinder_circle_link"
+        android:orderInCategory="150"
+        android:icon="@drawable/ic_action_attachment"
+        android:showAsAction="ifRoom"
         >
 
         <menu>

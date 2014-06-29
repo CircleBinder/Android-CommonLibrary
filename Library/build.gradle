@@ -1,4 +1,4 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 apply plugin: 'android-power-assert'
 apply from: '../gradle/common.gradle'
 
@@ -10,7 +10,7 @@ android {
     buildToolsVersion androidBuildToolsVersion
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion androidSdkVersion
         versionCode theVersionCode
         versionName theVersionName
@@ -24,5 +24,5 @@ android {
 }
 
 dependencies {
-    provided 'com.android.support:appcompat-v7:19.1.0'
+    compile 'com.android.support:support-v13:18.0.+'
 }

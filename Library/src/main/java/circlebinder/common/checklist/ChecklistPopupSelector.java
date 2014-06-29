@@ -1,8 +1,8 @@
 package circlebinder.common.checklist;
 
 import android.content.Context;
-import android.support.v7.internal.widget.ListPopupWindow;
 import android.view.View;
+import android.widget.ListPopupWindow;
 
 import net.ichigotake.common.widget.OnItemClickEventListener;
 import net.ichigotake.common.widget.OnItemClickListener;

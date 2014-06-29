@@ -1,12 +1,10 @@
 package net.ichigotake.common.app;
 
-import android.content.Context;
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
 
 import circlebinder.common.R;
 
@@ -20,33 +18,14 @@ public final class FragmentTransit implements Tripper {
     private int mTargetViewId;
     private String mTag;
     
-    public FragmentTransit(ActionBarActivity activity) {
-        mFragmentManager = activity.getSupportFragmentManager();
-    }
-    
-    public FragmentTransit(FragmentActivity activity) {
-        mFragmentManager = activity.getSupportFragmentManager();
+    public FragmentTransit(Activity activity) {
+        mFragmentManager = activity.getFragmentManager();
     }
     
     public FragmentTransit(FragmentManager fragmentManager) {
         mFragmentManager = fragmentManager;
     }
     
-    public static FragmentTransit from(Context context) {
-        final FragmentTransit transit;
-        if (context instanceof ActionBarActivity) {
-            ActionBarActivity activity = (ActionBarActivity) context;
-            transit = new FragmentTransit(activity);
-        } else if (context instanceof FragmentActivity) {
-            FragmentActivity activity = (FragmentActivity) context;
-            transit = new FragmentTransit(activity);
-        } else {
-            throw new IllegalStateException(
-                    "Context not contain ActionBarActivity or FragmentActivity");
-        }
-        return transit;
-    }
-
     public FragmentTransit setNextFragment(int targetViewId, Fragment nextFragment) {
         mTargetViewId = targetViewId;
         mNextFragment = nextFragment;
@@ -75,10 +54,10 @@ public final class FragmentTransit implements Tripper {
                 FragmentTransaction transaction = mFragmentManager.beginTransaction();
                 if (mIsAnimation) {
                     transaction.setCustomAnimations(
-                            R.anim.fade_in,
-                            R.anim.fade_out,
-                            R.anim.fade_in,
-                            R.anim.fade_out);
+                            R.animator.slide_in,
+                            R.animator.slide_out,
+                            R.animator.slide_in,
+                            R.animator.slide_out);
                 }
                 transaction.replace(targetViewId, nextFragment, mTag);
                 if (mAddBackStack) {

@@ -2,7 +2,7 @@ package circlebinder.common.view;
 
 import android.content.Context;
 import android.net.Uri;
-import android.support.v4.view.ActionProvider;
+import android.view.ActionProvider;
 import android.view.View;
 
 import circlebinder.common.circle.CircleWebContainer;

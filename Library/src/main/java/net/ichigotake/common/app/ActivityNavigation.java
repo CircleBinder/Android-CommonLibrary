@@ -1,16 +1,14 @@
 package net.ichigotake.common.app;
 
 import android.app.Activity;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
-import android.support.v4.app.NavUtils;
-import android.support.v4.app.TaskStackBuilder;
-import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 
 public final class ActivityNavigation {
 
-    public static boolean hasParentActivity(ActionBarActivity activity) {
-        return activity != null && activity.getSupportParentActivityIntent() != null;
+    public static boolean hasParentActivity(Activity activity) {
+        return activity != null && activity.getParentActivityIntent() != null;
     }
 
     public static boolean back(Activity currentActivity, MenuItem item) {
@@ -18,14 +16,14 @@ public final class ActivityNavigation {
             return false;
         }
 
-        Intent upIntent = NavUtils.getParentActivityIntent(currentActivity);
+        Intent upIntent = currentActivity.getParentActivityIntent();
         if (upIntent != null) {
-            if (NavUtils.shouldUpRecreateTask(currentActivity, upIntent)) {
+            if (currentActivity.shouldUpRecreateTask(upIntent)) {
                 TaskStackBuilder.create(currentActivity)
                         .addNextIntentWithParentStack(upIntent)
                         .startActivities();
             } else {
-                NavUtils.navigateUpTo(currentActivity, upIntent);
+                currentActivity.navigateUpTo(upIntent);
             }
         } else {
             currentActivity.finish();

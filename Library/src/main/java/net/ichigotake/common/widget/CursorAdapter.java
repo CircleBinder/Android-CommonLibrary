@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class CursorAdapter<ITEM, TAG> extends android.support.v4.widget.CursorAdapter
+public abstract class CursorAdapter<ITEM, TAG> extends android.widget.CursorAdapter
         implements ViewBinder<ITEM, TAG> {
 
     private final CursorItemConverter<ITEM> converter;
