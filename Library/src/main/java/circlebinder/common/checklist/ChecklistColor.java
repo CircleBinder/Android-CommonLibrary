@@ -5,27 +5,29 @@ import circlebinder.common.R;
 
 //TODO: インターフェースをすっきりさせたい
 public enum ChecklistColor implements Legacy {
-    ALL(-1, R.drawable.ic_checklist_none, "全て", "#aaaaaa"),
-    NONE(0, R.drawable.ic_checklist_none, "お気に入りからはずす", "#aaaaaa"),
-    ORANGE(1, R.drawable.ic_checklist_orange, "お気に入り", "#FF944A"),
-    PINK(2, R.drawable.ic_checklist_pink, "お気に入り", "#FF00FF"),
-    YELLOW(3, R.drawable.ic_checklist_yellow, "お気に入り", "#FFF700"),
-    GREEN(4, R.drawable.ic_checklist_green, "お気に入り", "#00B54A"),
-    LIGHT_BLUE(5, R.drawable.ic_checklist_light_blue, "お気に入り", "#00B5FF"),
-    PURPLE(6, R.drawable.ic_checklist_purple, "お気に入り", "#9C529C"),
-    BLUE(7, R.drawable.ic_checklist_blue, "お気に入り", "#0000FF"),
-    LIGHT_GREEN(8, R.drawable.ic_checklist_light_green, "お気に入り", "#00FF00"),
-    RED(9, R.drawable.ic_checklist_red, "お気に入り", "#FF0000"),
+    ALL(-1, R.drawable.ic_checklist_none, "全て", R.color.circlebinder_checklist_none),
+    NONE(0, R.drawable.ic_checklist_none, "お気に入りからはずす", R.color.circlebinder_checklist_none),
+    ORANGE(1, R.drawable.ic_checklist_orange, "お気に入り", R.color.circlebinder_checklist_orange),
+    PINK(2, R.drawable.ic_checklist_pink, "お気に入り", R.color.circlebinder_checklist_pink),
+    YELLOW(3, R.drawable.ic_checklist_yellow, "お気に入り", R.color.circlebinder_checklist_yellow),
+    GREEN(4, R.drawable.ic_checklist_green, "お気に入り", R.color.circlebinder_checklist_green),
+    LIGHT_BLUE(5, R.drawable.ic_checklist_light_blue, "お気に入り", R.color.circlebinder_checklist_light_blue),
+    PURPLE(6, R.drawable.ic_checklist_purple, "お気に入り", R.color.circlebinder_checklist_purple),
+    BLUE(7, R.drawable.ic_checklist_blue, "お気に入り", R.color.circlebinder_checklist_blue),
+    LIGHT_GREEN(8, R.drawable.ic_checklist_light_green, "お気に入り", R.color.circlebinder_checklist_light_green),
+    RED(9, R.drawable.ic_checklist_red, "お気に入り", R.color.circlebinder_checklist_red),
     ;
 
     final private int mId;
     final private int mColorDrawable;
     final private String mName;
+    final private int mColorResource;
 
-    private ChecklistColor(int id, int colorDrawable, String name, String colorCode) {
+    private ChecklistColor(int id, int colorDrawable, String name, int colorResource) {
         mId = id;
-        this.mColorDrawable = colorDrawable;
+        mColorDrawable = colorDrawable;
         mName = name;
+        mColorResource = colorResource;
     }
 
     public int getId() {
@@ -36,8 +38,12 @@ public enum ChecklistColor implements Legacy {
         return mName;
     }
 
-    public int getColorDrawable() {
+    public int getDrawableResource() {
         return mColorDrawable;
+    }
+
+    public int getColorResource() {
+        return mColorResource;
     }
 
     @Override

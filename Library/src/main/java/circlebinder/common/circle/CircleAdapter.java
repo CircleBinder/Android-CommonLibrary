@@ -37,7 +37,7 @@ public final class CircleAdapter extends CursorAdapter<Circle, CircleViewHolder>
 
         tag.getSpace().setCompoundDrawablesWithIntrinsicBounds(
                 0,
-                item.getChecklistColor().getColorDrawable(),
+                item.getChecklistColor().getDrawableResource(),
                 0,
                 0
         );
