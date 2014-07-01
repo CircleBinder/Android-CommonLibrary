@@ -5,19 +5,23 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import net.ichigotake.common.widget.CursorAdapter;
 import net.ichigotake.common.widget.CursorItemConverter;
+import net.ichigotake.common.widget.SectionHeaderAdapter;
 
 import circlebinder.common.R;
 import circlebinder.common.event.Circle;
 
-public final class CircleAdapter extends CursorAdapter<Circle, CircleViewHolder> {
+public class CircleAdapter extends CursorAdapter<Circle, CircleViewHolder>
+        implements SectionHeaderAdapter {
 
-
+    private final LayoutInflater inflater;
 
     public CircleAdapter(Context context, Cursor cursor, CursorItemConverter<Circle> converter) {
         super(context, cursor, converter);
+        this.inflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -48,4 +52,17 @@ public final class CircleAdapter extends CursorAdapter<Circle, CircleViewHolder>
         tag.getGenre().setText(item.getGenre().getName());
     }
 
+    @Override
+    public View getHeaderView(int i, View view, ViewGroup viewGroup) {
+        View headerView = inflater.inflate(R.layout.circlebinder_list_sub_header, viewGroup, false);
+        TextView subHeaderView = (TextView) headerView.findViewById(R.id.circlebinder_list_sub_header);
+        Circle circle = getItem(i);
+        subHeaderView.setText(circle.getSpace().getBlockName());
+        return headerView;
+    }
+
+    @Override
+    public long getHeaderId(int i) {
+        return  getItem(i).getSpace().getBlockName().charAt(0);
+    }
 }
