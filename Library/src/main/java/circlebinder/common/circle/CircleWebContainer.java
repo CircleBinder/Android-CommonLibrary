@@ -17,6 +17,7 @@ public final class CircleWebContainer {
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(false);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             webView.getSettings().setJavaScriptEnabled(true);
         } else {
@@ -47,9 +48,10 @@ public final class CircleWebContainer {
     }
 
     public void onDestroy() {
-        webView.getSettings().setBuiltInZoomControls(false);
-        //ほんとは最大サイズを指定して制御したいが、キャッシュの最大サイズを指定するAPIが見つからない
-        //何もしないでディスク容量が膨れ上がるよりは、たとえキャッシュの恩恵が受けられなくても控えめなアプリでいたい
         webView.clearCache(true);
+        webView.stopLoading();
+        webView.setWebChromeClient(null);
+        webView.setWebViewClient(null);
+        webView.destroy();
     }
 }
