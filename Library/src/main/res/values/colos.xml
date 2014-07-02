@@ -5,7 +5,7 @@
     <color name="circlebinder_app_head_text">#ffffff</color>
     <color name="circlebinder_app_card_item_background">#ffffff</color>
     <color name="circlebinder_app_card_container_background">#eeeeee</color>
-    <color name="circlebinder_app_card_container_background_selector">#80eeeeee</color>
+    <color name="circlebinder_app_card_container_background_selector">#40eeeeee</color>
 
     <color name="circlebinder_icon_border">#dddddd</color>
     <color name="circlebinder_checklist_none">#ffffffff</color>
