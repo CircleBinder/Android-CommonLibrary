@@ -28,4 +28,5 @@
     <string name="circlebinder_contact_mail_subject">【ご意見・ご要望】%sに関して</string>
     <string name="circlebinder_contact_mail_body"></string>
 
+    <string name="license_cretit_body_apache_v2">Apache License</string>
 </resources>
