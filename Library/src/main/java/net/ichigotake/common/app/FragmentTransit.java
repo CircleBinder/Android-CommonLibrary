@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.os.Handler;
 
 import circlebinder.common.R;
 
@@ -46,29 +45,20 @@ public final class FragmentTransit implements Tripper {
     public void trip() {
         final int targetViewId = mTargetViewId;
         final Fragment nextFragment = mNextFragment;
-        
-        Runnable runnable = new Runnable() {
-            
-            @Override
-            public void run() {
-                FragmentTransaction transaction = mFragmentManager.beginTransaction();
-                if (mIsAnimation) {
-                    transaction.setCustomAnimations(
-                            R.animator.slide_in,
-                            R.animator.slide_out,
-                            R.animator.slide_in,
-                            R.animator.slide_out);
-                }
-                transaction.replace(targetViewId, nextFragment, mTag);
-                if (mAddBackStack) {
-                    transaction.addToBackStack(null);
-                }
-                transaction.commit();
-            }
-            
-        };
-        
-        new Handler().post(runnable);
+
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        if (mIsAnimation) {
+            transaction.setCustomAnimations(
+                    R.animator.slide_in,
+                    R.animator.slide_out,
+                    R.animator.slide_in,
+                    R.animator.slide_out);
+        }
+        transaction.replace(targetViewId, nextFragment, mTag);
+        if (mAddBackStack) {
+            transaction.addToBackStack(null);
+        }
+        transaction.commit();
     }
     
     public void toPrev() {
