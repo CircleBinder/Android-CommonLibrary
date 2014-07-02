@@ -10,7 +10,7 @@ public final class ChangeLogFeedViewHolder {
     private final TextView title;
 
     public ChangeLogFeedViewHolder(View convertView) {
-        title = (TextView)convertView.findViewById(R.id.circlebinder_dashboard_item_label);
+        title = (TextView)convertView.findViewById(R.id.circlebinder_list_item);
     }
 
     public TextView getLabel() {
