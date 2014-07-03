@@ -64,11 +64,6 @@
             android:id="@+id/circlebinder_checklist_item_circle_label4"
             />
 
-        <include
-            layout="@layout/circlebinder_checklist_item_circle_label"
-            android:id="@+id/circlebinder_checklist_item_circle_label5"
-            />
-
     </LinearLayout>
 
 </LinearLayout>
