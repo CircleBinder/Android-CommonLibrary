@@ -1,5 +1,6 @@
 package circlebinder.common.circle;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.webkit.WebView;
 
@@ -10,6 +11,7 @@ public final class CircleWebContainer {
 
     private final WebView webView;
 
+    @SuppressLint("SetJavaScriptEnabled")
     public CircleWebContainer(WebView webView) {
         this.webView = webView;
 

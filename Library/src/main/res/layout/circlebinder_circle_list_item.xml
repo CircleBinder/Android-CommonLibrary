@@ -2,8 +2,8 @@
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/CircleBinderCardItem"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="56dp"
     >
@@ -21,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="あ01a"
             android:textSize="@dimen/circlebinder_material_font_button"
+            tools:text="あ01a"
             />
 
     </RelativeLayout>
@@ -41,23 +41,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/circlebinder_material_font_subhead"
-            android:text="創作"
             android:visibility="gone"
+            tools:text="創作"
             />
 
         <TextView
             style="@style/CircleBinderCircleListItemCircleName"
             android:id="@+id/checklist_item_circle_name"
-            android:text="CircleBinder"
             android:textSize="@dimen/circlebinder_material_font_subhead"
+            tools:text="CircleBinder"
             />
 
         <TextView
             android:id="@+id/checklist_item_pen_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="\@ichigotake"
             android:textSize="@dimen/circlebinder_material_font_body"
+            tools:text="\@ichigotake"
             />
 
     </LinearLayout>
