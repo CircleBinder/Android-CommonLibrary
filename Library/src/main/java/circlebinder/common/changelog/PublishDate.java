@@ -7,7 +7,7 @@ import android.text.format.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public final class PublishDate implements FeedDate, Parcelable {
+public final class PublishDate implements Parcelable {
 
     public final static class Builder {
         //TODO: デフォルトのフォーマットを考えておく
@@ -41,12 +41,10 @@ public final class PublishDate implements FeedDate, Parcelable {
         this.formattedDate = formattedDate;
     }
 
-    @Override
     public long getTimestamp() {
         return timestampMillSeconds;
     }
 
-    @Override
     public String getFormattedDate() {
         return formattedDate;
     }

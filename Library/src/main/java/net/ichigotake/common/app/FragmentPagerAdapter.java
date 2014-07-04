@@ -17,12 +17,6 @@ public class FragmentPagerAdapter extends FragmentStatePagerAdapter {
         this.registeredPages = new SparseArray<Object>();
     }
 
-    public void reload() {
-        for (int i=0, size=item.getCount(); i<size; i++) {
-            reload(i);
-        }
-    }
-
     public void reload(int position) {
         Object page = registeredPages.get(position);
         if (page != null && page instanceof OnPageChangeListener) {

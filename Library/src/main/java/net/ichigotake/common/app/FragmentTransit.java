@@ -1,6 +1,5 @@
 package net.ichigotake.common.app;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -12,14 +11,9 @@ public final class FragmentTransit implements Tripper {
     final private FragmentManager mFragmentManager;
     
     private boolean mAddBackStack = true;
-    private boolean mIsAnimation = true;
     private Fragment mNextFragment;
     private int mTargetViewId;
     private String mTag;
-    
-    public FragmentTransit(Activity activity) {
-        mFragmentManager = activity.getFragmentManager();
-    }
     
     public FragmentTransit(FragmentManager fragmentManager) {
         mFragmentManager = fragmentManager;
@@ -47,13 +41,12 @@ public final class FragmentTransit implements Tripper {
         final Fragment nextFragment = mNextFragment;
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        if (mIsAnimation) {
-            transaction.setCustomAnimations(
-                    R.animator.slide_in,
-                    R.animator.slide_out,
-                    R.animator.slide_in,
-                    R.animator.slide_out);
-        }
+        transaction.setCustomAnimations(
+                R.animator.slide_in,
+                R.animator.slide_out,
+                R.animator.slide_in,
+                R.animator.slide_out
+        );
         transaction.replace(targetViewId, nextFragment, mTag);
         if (mAddBackStack) {
             transaction.addToBackStack(null);
@@ -61,14 +54,4 @@ public final class FragmentTransit implements Tripper {
         transaction.commit();
     }
     
-    public void toPrev() {
-        FragmentManager fragmentManager = mFragmentManager;
-        fragmentManager.popBackStack();
-    }
-
-    public FragmentTransit setNoAnimation() {
-        mIsAnimation = false;
-        return this;
-    }
-
 }
